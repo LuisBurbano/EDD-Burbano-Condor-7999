@@ -1,3 +1,14 @@
+/***********************************************************************
+ * UFA - ESPE
+ * Students:  Luis Burbano - Mateo Condor
+ * Module:  Persona.cpp
+ * Created: jueves, 27 de octubre de 2022 19:00:40
+ * Modified: jueves, 27 de octubre de 2022 19:21:48
+ * Problem: Calcular la edad de una persona
+ * Level: Level three
+ * NRC: 7999
+ ***********************************************************************/
+
 #include<iostream>
 #include<cstring>
 
