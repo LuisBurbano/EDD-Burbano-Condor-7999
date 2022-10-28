@@ -9,39 +9,44 @@
  * NRC: 7999
  ***********************************************************************/
 
-#include<iostream>
-#include<cstring>
+#if !defined(__ObjectOrientedModel_1_Persona_h)
+#define __ObjectOrientedModel_1_Persona_h
+#include <cstring>
+#include <iostream>
 
 using namespace std;
 
-class Persona{
-	
-	public:
-		string nombre;
-		string apellido;
-		int cedula;
-		int anioNac;
-		int mesNac;
-		int edad;
+class Persona
+{
+public:
+   string getNombre(void);
+   void setNombre(string newNombre);
+   string getApellido(void);
+   void setApellido(string newApellido);
+   int getCedula(void);
+   void setCedula(int newCedula);
+   int getAnioNac(void);
+   void setAnioNac(int newAnioNac);
+   int getMesNac(void);
+   void setMesNac(int newMesNac);
+   int getEdad(void);
+   void setEdad(int newEdad);
+   Persona(string Nombre, string Apellido, int Cedula, int Edad, int MesNac, int AnioNac);
+   int calcularEdad(void);
+   void imprimirDatos(void);
 
-		
-	public:
-		
-		Persona(string _nombre, string _apellido, int _cedula, int _edad, int _mesNac, int _anioNac){
-			nombre = _nombre;
-			apellido = _apellido;
-			cedula = _cedula;
-			mesNac = _mesNac;
-			anioNac = _anioNac;
-			edad = _edad;
-			
-		}
-		
-		Persona(){
-		
-		}
-		
-		int calcularEdad();
-		void imprimirDatos();
-	
+protected:
+   void finalize(void);
+
+private:
+   string nombre;
+   string apellido;
+   int cedula;
+   int anioNac;
+   int mesNac;
+   int edad;
+
+
 };
+
+#endif

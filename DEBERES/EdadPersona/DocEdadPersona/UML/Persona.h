@@ -1,7 +1,7 @@
 /***********************************************************************
  * Module:  Persona.h
  * Author:  luis1
- * Modified: jueves, 27 de octubre de 2022 19:21:48
+ * Modified: jueves, 27 de octubre de 2022 19:52:18
  * Purpose: Declaration of the class Persona
  ***********************************************************************/
 
@@ -24,6 +24,8 @@ public:
    int getEdad(void);
    void setEdad(int newEdad);
    Persona(String Nombre, String Apellido, int Cedula, int Edad, int MesNac, int AnioNac);
+   int calcularEdad(void);
+   void imprimirDatos(void);
 
 protected:
    void finalize(void);

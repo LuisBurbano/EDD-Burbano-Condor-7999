@@ -8,13 +8,88 @@
  * Level: Level three
  * NRC: 7999
  ***********************************************************************/
-#include<iostream>
+
 #include "Persona.h"
+#include<iostream>
+#include <string.h>
 
-using namespace std;
+string Persona::getNombre(void)
+{
+   return nombre;
+}
 
-int Persona::calcularEdad(){
-	int edad = 0;
+void Persona::setNombre(string newNombre)
+{
+   nombre = newNombre;
+}
+
+string Persona::getApellido(void)
+{
+   return apellido;
+}
+
+void Persona::setApellido(string newApellido)
+{
+   apellido = newApellido;
+}
+
+int Persona::getCedula(void)
+{
+   return cedula;
+}
+
+void Persona::setCedula(int newCedula)
+{
+   cedula = newCedula;
+}
+
+int Persona::getAnioNac(void)
+{
+   return anioNac;
+}
+
+void Persona::setAnioNac(int newAnioNac)
+{
+   anioNac = newAnioNac;
+}
+
+int Persona::getMesNac(void)
+{
+   return mesNac;
+}
+
+void Persona::setMesNac(int newMesNac)
+{
+   mesNac = newMesNac;
+}
+
+int Persona::getEdad(void)
+{
+   return edad;
+}
+
+void Persona::setEdad(int newEdad)
+{
+   edad = newEdad;
+}
+
+Persona::Persona(string _nombre, string _apellido, int _cedula, int _edad, int _mesNac, int _anioNac)
+{
+   nombre = _nombre;
+   apellido = _apellido;
+   cedula = _cedula;
+   mesNac = _mesNac;
+   anioNac = _anioNac;
+   edad = _edad;
+}
+
+void Persona::finalize(void)
+{
+   // TODO : implement
+}
+int Persona::calcularEdad(void)
+{
+   int edad = 0;
 	int mesAct; 
 	int anioAct;
 	bool bucle = 1;
@@ -50,13 +125,15 @@ int Persona::calcularEdad(){
 		} 
 	}
 	return edad;
+
 }
 
-void Persona::imprimirDatos(){
-	
-	cout<<"\nLos datos ingresados y la edad calculada son los siguientes";
+
+
+void Persona::imprimirDatos(void)
+{
+   cout<<"\nLos datos ingresados y la edad calculada son los siguientes";
 	cout<<"\nNombre y apellido "<<nombre<<" "<<apellido<<endl;
 	cout<<"\nCedula "<<cedula<<endl;
 	cout<<"\nLa edad calculada es "<<edad<<endl;
-	
 }

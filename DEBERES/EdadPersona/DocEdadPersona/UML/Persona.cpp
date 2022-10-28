@@ -1,7 +1,7 @@
 /***********************************************************************
  * Module:  Persona.cpp
  * Author:  luis1
- * Modified: jueves, 27 de octubre de 2022 19:21:48
+ * Modified: jueves, 27 de octubre de 2022 19:52:18
  * Purpose: Implementation of the class Persona
  ***********************************************************************/
 
@@ -176,6 +176,28 @@ Persona::Persona(String Nombre, String Apellido, int Cedula, int Edad, int MesNa
 ////////////////////////////////////////////////////////////////////////
 
 void Persona::finalize(void)
+{
+   // TODO : implement
+}
+
+////////////////////////////////////////////////////////////////////////
+// Name:       Persona::calcularEdad()
+// Purpose:    Implementation of Persona::calcularEdad()
+// Return:     int
+////////////////////////////////////////////////////////////////////////
+
+int Persona::calcularEdad(void)
+{
+   // TODO : implement
+}
+
+////////////////////////////////////////////////////////////////////////
+// Name:       Persona::imprimirDatos()
+// Purpose:    Implementation of Persona::imprimirDatos()
+// Return:     void
+////////////////////////////////////////////////////////////////////////
+
+void Persona::imprimirDatos(void)
 {
    // TODO : implement
 }
