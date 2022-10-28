@@ -32,6 +32,7 @@ public:
    int getEdad(void);
    void setEdad(int newEdad);
    Persona(string Nombre, string Apellido, int Cedula, int Edad, int MesNac, int AnioNac);
+   ~Persona();
    int calcularEdad(void);
    void imprimirDatos(void);
 
