@@ -14,5 +14,6 @@
 int main(int argc, char** argv) {
 	
 	Numero valor;
+	
 	return 0;
 }

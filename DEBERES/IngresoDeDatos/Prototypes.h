@@ -11,9 +11,9 @@
 class Prototypes
 {
 public:
-   virtual char *charImput(char const *)=0;
-   virtual char *doubleAndFloatImput(char const *)=0;
-   virtual char *integerImput(char const *);
+   virtual char *chaImput(char const *msj);
+   virtual char *doublAndFloatImput(char const *msj);
+   virtual char *integeImput(char const *msj);
 
 protected:
 private:

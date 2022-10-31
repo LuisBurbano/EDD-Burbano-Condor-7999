@@ -17,7 +17,7 @@ using namespace std;
 // Return:     char
 ////////////////////////////////////////////////////////////////////////
 
-char *charImput(char const *msj)
+char *chaImput(char const *msj)
 {
    char *a=new char [0];
 	char c;
@@ -43,7 +43,7 @@ char *charImput(char const *msj)
 // Return:     char
 ////////////////////////////////////////////////////////////////////////
 
-char *doubleAndFloatImput(char const *msj)
+char *doublAndFloatImput(char const *msj)
 {
 	char *a=new char[0];
 	char c;
@@ -74,7 +74,7 @@ char *doubleAndFloatImput(char const *msj)
 // Return:     char
 ////////////////////////////////////////////////////////////////////////
 
-char *integerImput(char const *msj){
+char *integeImput(char const *msj){
 	char *dato=new char[0];
 	char c;
 	int i = 0;
