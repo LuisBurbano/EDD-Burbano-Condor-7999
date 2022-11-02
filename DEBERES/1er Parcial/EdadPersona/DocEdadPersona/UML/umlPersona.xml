@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_kkgsMBeLEd60N8ipLbB6nA" name="ObjectOrientedModel_1">
+  <packagedElement xmi:type="uml:Class" xmi:id="_ntZHYFZXEe2VLPme9FdmPQ" name="Persona">
+    <ownedAttribute xmi:id="_nw3SIFZXEe2VLPme9FdmPQ" name="nombre" visibility="private" type="_nxF7oFZXEe2VLPme9FdmPQ"/>
+    <ownedAttribute xmi:id="_nxNQYFZXEe2VLPme9FdmPQ" name="apellido" visibility="private" type="_nxF7oFZXEe2VLPme9FdmPQ"/>
+    <ownedAttribute xmi:id="_nxSI4FZXEe2VLPme9FdmPQ" name="cedula" visibility="private" type="_nxUlIFZXEe2VLPme9FdmPQ"/>
+    <ownedAttribute xmi:id="_nxarwFZXEe2VLPme9FdmPQ" name="anioNac" visibility="private" type="_nxUlIFZXEe2VLPme9FdmPQ"/>
+    <ownedAttribute xmi:id="_nxhZcFZXEe2VLPme9FdmPQ" name="mesNac" visibility="private" type="_nxUlIFZXEe2VLPme9FdmPQ"/>
+    <ownedAttribute xmi:id="_nxmR8FZXEe2VLPme9FdmPQ" name="edad" visibility="private" type="_nxUlIFZXEe2VLPme9FdmPQ"/>
+    <ownedOperation xmi:id="_nykiUFZXEe2VLPme9FdmPQ" name="getNombre" visibility="public" bodyCondition="_nywvkFZXEe2VLPme9FdmPQ">
+      <ownedRule xmi:id="_nywvkFZXEe2VLPme9FdmPQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_ny55gFZXEe2VLPme9FdmPQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_nzSUAFZXEe2VLPme9FdmPQ" name="getNombre" type="_nxF7oFZXEe2VLPme9FdmPQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_nzWlcFZXEe2VLPme9FdmPQ" name="setNombre" visibility="public" bodyCondition="_nzbd8FZXEe2VLPme9FdmPQ">
+      <ownedRule xmi:id="_nzbd8FZXEe2VLPme9FdmPQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_nzcsEFZXEe2VLPme9FdmPQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_nzmdEFZXEe2VLPme9FdmPQ" name="newNombre" type="_nxF7oFZXEe2VLPme9FdmPQ"/>
+      <ownedParameter xmi:id="_nzr8oFZXEe2VLPme9FdmPQ" name="setNombre" type="_nztKwFZXEe2VLPme9FdmPQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_nzuY4FZXEe2VLPme9FdmPQ" name="getApellido" visibility="public" bodyCondition="_nz0fgFZXEe2VLPme9FdmPQ">
+      <ownedRule xmi:id="_nz0fgFZXEe2VLPme9FdmPQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_nz1GkFZXEe2VLPme9FdmPQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_nz4w8FZXEe2VLPme9FdmPQ" name="getApellido" type="_nxF7oFZXEe2VLPme9FdmPQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_nz7NMFZXEe2VLPme9FdmPQ" name="setApellido" visibility="public" bodyCondition="_n0AswFZXEe2VLPme9FdmPQ">
+      <ownedRule xmi:id="_n0AswFZXEe2VLPme9FdmPQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_n0BT0FZXEe2VLPme9FdmPQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_n0GMUFZXEe2VLPme9FdmPQ" name="newApellido" type="_nxF7oFZXEe2VLPme9FdmPQ"/>
+      <ownedParameter xmi:id="_n0KdwFZXEe2VLPme9FdmPQ" name="setApellido" type="_nztKwFZXEe2VLPme9FdmPQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_n0MS8FZXEe2VLPme9FdmPQ" name="getCedula" visibility="public" bodyCondition="_n0RLcFZXEe2VLPme9FdmPQ">
+      <ownedRule xmi:id="_n0RLcFZXEe2VLPme9FdmPQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_n0RygFZXEe2VLPme9FdmPQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_n0U10FZXEe2VLPme9FdmPQ" name="getCedula" type="_nxUlIFZXEe2VLPme9FdmPQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_n0WD8FZXEe2VLPme9FdmPQ" name="setCedula" visibility="public" bodyCondition="_n0a8cFZXEe2VLPme9FdmPQ">
+      <ownedRule xmi:id="_n0a8cFZXEe2VLPme9FdmPQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_n0bjgFZXEe2VLPme9FdmPQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_n0hDEFZXEe2VLPme9FdmPQ" name="newCedula" type="_nxUlIFZXEe2VLPme9FdmPQ"/>
+      <ownedParameter xmi:id="_n0l7kFZXEe2VLPme9FdmPQ" name="setCedula" type="_nztKwFZXEe2VLPme9FdmPQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_n0nwwFZXEe2VLPme9FdmPQ" name="getAnioNac" visibility="public" bodyCondition="_n0sCMFZXEe2VLPme9FdmPQ">
+      <ownedRule xmi:id="_n0sCMFZXEe2VLPme9FdmPQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_n0tQUFZXEe2VLPme9FdmPQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_n0vskFZXEe2VLPme9FdmPQ" name="getAnioNac" type="_nxUlIFZXEe2VLPme9FdmPQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_n0xhwFZXEe2VLPme9FdmPQ" name="setAnioNac" visibility="public" bodyCondition="_n01zMFZXEe2VLPme9FdmPQ">
+      <ownedRule xmi:id="_n01zMFZXEe2VLPme9FdmPQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_n03BUFZXEe2VLPme9FdmPQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_n08g4FZXEe2VLPme9FdmPQ" name="newAnioNac" type="_nxUlIFZXEe2VLPme9FdmPQ"/>
+      <ownedParameter xmi:id="_n1AyUFZXEe2VLPme9FdmPQ" name="setAnioNac" type="_nztKwFZXEe2VLPme9FdmPQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_n1CAcFZXEe2VLPme9FdmPQ" name="getMesNac" visibility="public" bodyCondition="_n1GR4FZXEe2VLPme9FdmPQ">
+      <ownedRule xmi:id="_n1GR4FZXEe2VLPme9FdmPQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_n1G48FZXEe2VLPme9FdmPQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_n1KjUFZXEe2VLPme9FdmPQ" name="getMesNac" type="_nxUlIFZXEe2VLPme9FdmPQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_n1MYgFZXEe2VLPme9FdmPQ" name="setMesNac" visibility="public" bodyCondition="_n1Qp8FZXEe2VLPme9FdmPQ">
+      <ownedRule xmi:id="_n1Qp8FZXEe2VLPme9FdmPQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_n1RRAFZXEe2VLPme9FdmPQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_n1VicFZXEe2VLPme9FdmPQ" name="newMesNac" type="_nxUlIFZXEe2VLPme9FdmPQ"/>
+      <ownedParameter xmi:id="_n1aa8FZXEe2VLPme9FdmPQ" name="setMesNac" type="_nztKwFZXEe2VLPme9FdmPQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_n1cQIFZXEe2VLPme9FdmPQ" name="getEdad" visibility="public" bodyCondition="_n1iWwFZXEe2VLPme9FdmPQ">
+      <ownedRule xmi:id="_n1iWwFZXEe2VLPme9FdmPQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_n1i90FZXEe2VLPme9FdmPQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_n1laEFZXEe2VLPme9FdmPQ" name="getEdad" type="_nxUlIFZXEe2VLPme9FdmPQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_n1n2UFZXEe2VLPme9FdmPQ" name="setEdad" visibility="public" bodyCondition="_n1rgsFZXEe2VLPme9FdmPQ">
+      <ownedRule xmi:id="_n1rgsFZXEe2VLPme9FdmPQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_n1su0FZXEe2VLPme9FdmPQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_n1yOYFZXEe2VLPme9FdmPQ" name="newEdad" type="_nxUlIFZXEe2VLPme9FdmPQ"/>
+      <ownedParameter xmi:id="_n13G4FZXEe2VLPme9FdmPQ" name="setEdad" type="_nztKwFZXEe2VLPme9FdmPQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_n148EFZXEe2VLPme9FdmPQ" name="Persona" visibility="public" bodyCondition="_n19NgFZXEe2VLPme9FdmPQ">
+      <ownedRule xmi:id="_n19NgFZXEe2VLPme9FdmPQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_n190kFZXEe2VLPme9FdmPQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_n2NsMFZXEe2VLPme9FdmPQ" name="Nombre" type="_nxF7oFZXEe2VLPme9FdmPQ"/>
+      <ownedParameter xmi:id="_n2SksFZXEe2VLPme9FdmPQ" name="Apellido" type="_nxF7oFZXEe2VLPme9FdmPQ"/>
+      <ownedParameter xmi:id="_n2W2IFZXEe2VLPme9FdmPQ" name="Cedula" type="_nxUlIFZXEe2VLPme9FdmPQ"/>
+      <ownedParameter xmi:id="_n2c8wFZXEe2VLPme9FdmPQ" name="Edad" type="_nxUlIFZXEe2VLPme9FdmPQ"/>
+      <ownedParameter xmi:id="_n2icUFZXEe2VLPme9FdmPQ" name="MesNac" type="_nxUlIFZXEe2VLPme9FdmPQ"/>
+      <ownedParameter xmi:id="_n2mtwFZXEe2VLPme9FdmPQ" name="AnioNac" type="_nxUlIFZXEe2VLPme9FdmPQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_n2sNUFZXEe2VLPme9FdmPQ" name="finalize" visibility="protected" bodyCondition="_n2xF0FZXEe2VLPme9FdmPQ">
+      <ownedRule xmi:id="_n2xF0FZXEe2VLPme9FdmPQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_n2xs4FZXEe2VLPme9FdmPQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_n20wMFZXEe2VLPme9FdmPQ" name="finalize" type="_nztKwFZXEe2VLPme9FdmPQ" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_nxF7oFZXEe2VLPme9FdmPQ" name="String"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_nxUlIFZXEe2VLPme9FdmPQ" name="int"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_nztKwFZXEe2VLPme9FdmPQ" name="void"/>
+</uml:Model>
