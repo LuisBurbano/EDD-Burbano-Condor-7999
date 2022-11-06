@@ -4,5 +4,5 @@
 class Fecha{
     public:
         tm *añadirDias(int dias);
-        void mostrarFechas();
+        void mostrarFechas(int plazos, int diaMes);
 };

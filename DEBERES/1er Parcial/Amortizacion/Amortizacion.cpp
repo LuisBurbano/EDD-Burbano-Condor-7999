@@ -65,7 +65,7 @@ void Amortizacion::mostrarTablaAmortizacion(Amortizacion a){
                 " | Cuota: " << cuota << 
                 " | Interes: " << a.getPrestamo() * (a.getInteres() / 100) << 
                 " | Capital: " << cuota - (a.getPrestamo() * (a.getInteres() / 100)) << 
-                " | Saldo final: " << a.calcularMontoFinal(a.getPrestamo(), cuota, a.getInteres()) << " $ | " << endl;
+                " | Saldo final: " << a.calcularMontoFinal(a.getPrestamo(), cuota, a.getInteres()) << " $ | \n" << endl;
         a.setPrestamo(a.calcularMontoFinal(a.getPrestamo(), cuota, a.getInteres()));
     }
 }
