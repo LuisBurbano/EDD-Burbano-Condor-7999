@@ -1,3 +1,14 @@
+/***********************************************************************
+ * UFA - ESPE
+ * Students:  Luis Burbano - Mateo Condor
+ * Module:  main.cpp
+ * Created: martes, 1 de noviembre 10:51:00
+ * Modified: martes, 1 de noviembre 10:51:00
+ * Problem: Sobrecarga de operadores
+ * Level: Level three
+ * NRC: 7999
+ ***********************************************************************/
+
 #include <iostream>
 #include "Coordinate.cpp"
 #include "Fraccion.cpp"

@@ -30,7 +30,7 @@ float Fraccion::getDenominador(){
 
 
 float Fraccion::operator / (Fraccion f){
-    float resultado;
-    resultado = (this->numerador * f.numerador) / (this->denominador * f.denominador);
-    return resultado;
+
+	return (this->numerador * f.numerador) / (this->denominador * f.denominador);
+
 }

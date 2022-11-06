@@ -1,10 +1,10 @@
 /***********************************************************************
  * UFA - ESPE
  * Students:  Luis Burbano - Mateo Condor
- * Module:  Persona.cpp
- * Created: jueves, 27 de octubre de 2022 19:00:40
- * Modified: jueves, 27 de octubre de 2022 19:21:48
- * Problem: Calcular la edad de una persona
+ * Module:  main.cpp
+ * Created: martes, 1 de noviembre 10:51:00
+ * Modified: martes, 1 de noviembre 10:51:00
+ * Problem: Sobrecarga de operadores
  * Level: Level three
  * NRC: 7999
  ***********************************************************************/
