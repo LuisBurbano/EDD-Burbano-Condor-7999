@@ -4,7 +4,8 @@
 
 <Workspace>
 	<Local Expanded="Yes">
-		<Model Expanded="Yes" ID="{3FC8E3A8-C4E4-46C7-A7E8-9E71AF1D17C9}" Name="SobrecargaOperadores" Selected="Yes" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="SobrecargaOperadores.oom"/>
+		<Model Expanded="Yes" ID="{3FC8E3A8-C4E4-46C7-A7E8-9E71AF1D17C9}" Loaded="No" Name="SobrecargaOperadores" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="SobrecargaOperadores.oom"/>
+		<Model Expanded="Yes" ID="{C695ED22-0DAB-439D-BFD2-64F4EFB28571}" Name="ObjectOrientedModel_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../Amortizacion/Doc/ObjectOrientedModel_1.oom"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>
