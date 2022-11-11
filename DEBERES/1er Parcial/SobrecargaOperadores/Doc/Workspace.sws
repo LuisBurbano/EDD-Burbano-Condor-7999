@@ -4,9 +4,10 @@
 
 <Workspace>
 	<Local Expanded="Yes">
-		<Model ID="{3FC8E3A8-C4E4-46C7-A7E8-9E71AF1D17C9}" Name="SobrecargaOperadores" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="SobrecargaOperadores.oom"/>
+		<Model ID="{3FC8E3A8-C4E4-46C7-A7E8-9E71AF1D17C9}" Loaded="No" Name="SobrecargaOperadores" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="SobrecargaOperadores.oom"/>
 		<Model Expanded="Yes" ID="{C695ED22-0DAB-439D-BFD2-64F4EFB28571}" Loaded="No" Name="ObjectOrientedModel_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../Amortizacion/Doc/ObjectOrientedModel_1.oom"/>
-		<Model Expanded="Yes" ID="{A9774156-D507-42FD-9347-4CD8E1CF4DEA}" Name="FigurasGeometrica" Selected="Yes" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../Amortizacion/Doc/FigurasGeometrica.oom"/>
+		<Model Expanded="Yes" ID="{A9774156-D507-42FD-9347-4CD8E1CF4DEA}" Loaded="No" Name="FigurasGeometrica" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../Amortizacion/Doc/FigurasGeometrica.oom"/>
+		<Model Expanded="Yes" ID="{DDE46A80-3CF9-49F4-A7CA-FEA276EB8F2C}" Name="ObjectOrientedModel_1" Selected="Yes" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../ArraysEstaticos/ObjectOrientedModel_1.oom"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>
