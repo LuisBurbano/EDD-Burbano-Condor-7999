@@ -9,7 +9,6 @@ class Figura{
         double area(double dato1,double dato2,double dato3, int opcion);//trapecio y poligono regular
         char *doubleAndFloatImput(char const *msj);
         double convertirFloat();
-
         void menu();
 
         

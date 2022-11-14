@@ -32,7 +32,7 @@ double Figura::area(double dato1, double dato2, int opcion){
     double resultado;
     switch(opcion){
         case 1:
-            //rectangulo o romboide
+            //rectangulo y romboide
             resultado = dato1*dato2;
             break;
         case 2:
