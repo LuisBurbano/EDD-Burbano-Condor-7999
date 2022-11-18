@@ -13,4 +13,6 @@ class ListaSimple {
         void eliminarDatoLista(int dato);
         void buscarDatoLista(int dato);
         void modificarDatoLista(int dato, int nuevoDato);
+        char *integerImput(char const *msj);
+        int charToInt();
 };
