@@ -1,5 +1,16 @@
+/***********************************************************************
+ * UFA - ESPE
+ * Students:  Luis Burbano - Mateo Condor
+ * Module:  Matriz.cpp
+ * Created: Sabado, 19 de noviembre de 2022 10:51:00
+ * Modified: Lunes, 21 de noviembre de 2022 02:21:31
+ * Problem: Correcion de la prueba parcial 1 con recursividad
+ * Level: Level three
+ * NRC: 7999
+ ***********************************************************************/
+
 #include "Matriz.h"
-//#include "Validacion.cpp"
+
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
