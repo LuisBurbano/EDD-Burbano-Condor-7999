@@ -1,3 +1,15 @@
+/*	UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
+		INGENIERA DE SOFTWARE
+                
+	AUTORES:
+		Mateo Javier Condor Sosa 	 
+		Luis Ariel Burbano Pacheco       
+	FECHA DE CREACION:
+		21/11/2022         	
+	FECHA DE MODIFICACION:
+		22/11/2022   
+*/
+
 #pragma once
 #include <iostream>
 #include "Nodo.hpp"
@@ -52,7 +64,9 @@ class ListaDoble{
             Nodo<T> *nuevo = new Nodo<T>(dato);
             Nodo<T> *aux = inicio;
             int cont = 0;
-            if(pos == 0){
+            if(inicio == NULL){
+                cout << "\n\tLista vacia" << endl;
+            }else if(pos == 0){
                 insertarPorInicio(dato);
             }else if(pos == tam){
                 insertarPorFin(dato);   
@@ -75,20 +89,24 @@ class ListaDoble{
         
         void eliminarPorInicio(){
             if(inicio == NULL){
-                cout << "\tLista vacia" << endl;
+                cout << "\n\tLista vacia" << endl;
             }else{
                 inicio = inicio -> getSiguiente();
                 inicio -> setAnterior(fin);
+                fin -> setSiguiente(inicio);
+                cout << "\n\tDato eliminado" << endl;
             }
             tam--;
         }
 
         void eliminarPorFin(){
             if(inicio == NULL){
-                cout << "\tLista vacia" << endl;
+                cout << "\n\tLista vacia" << endl;
             }else{
                 fin = fin -> getAnterior();
                 fin -> setSiguiente(inicio);
+                inicio -> setAnterior(fin);
+                cout << "\n\tDato eliminado" << endl;
             }
             tam--;
         }
@@ -96,7 +114,10 @@ class ListaDoble{
         void eliminarPorPosicion(int pos){
             Nodo<T> *aux = inicio;
             int cont = 0;
-            if(pos == 0){
+            
+            if(inicio == NULL){
+                cout << "\n\tLista vacia" << endl; 
+            }else if(pos == 0){
                 eliminarPorInicio();
             }else if(pos == tam){
                 eliminarPorFin();   
@@ -116,40 +137,49 @@ class ListaDoble{
 
         void buscar(T dato){
             Nodo<T> *aux = inicio;
-            int cont = 0;
+            int cont = 1;
             bool encontrado = false;
-            while(aux){
-                if(aux->getDato() == dato){
-                    encontrado = true;
-                    break;
-                }else{
-                    encontrado = false;
-                }
-                aux = aux->getSiguiente();
-                cont++;
-            }
+            if(inicio == NULL){
+                cout << "\n\tLista vacia" << endl;
+            }else{
 
-            if (encontrado == true) {
-                cout << "El dato " << dato << " se encuentra en la posicion " << cont + 1 << endl;
-            } else {
-                cout << "El dato " << dato << " no se encuentra en la lista" << endl;
+                while(aux){
+                    if(aux->getDato() == dato){
+                        encontrado = true;
+                        break;
+                    }else{
+                        encontrado = false;
+                    }
+                    aux = aux->getSiguiente();
+                    cont++;
+                }
+
+                if (encontrado == true) {
+                    cout << "El dato " << dato << " se encuentra en la posicion " << cont << endl;
+                } else {
+                    cout << "El dato " << dato << " no se encuentra en la lista" << endl;
+                }
             }
+            
         }
 
-        void mostrar(){
+        bool mostrar(){
+            bool vacio = false;
             Nodo<T> *aux = inicio;
             if(inicio != NULL){
-                cout<< "("<< fin->getDato() << ") -> <- ";
+                cout<< "\n("<< fin->getDato() << ") -> <- ";
                 do{
                     cout << aux -> getDato() << " -> <- ";
                     aux = aux -> getSiguiente();
                 }while(aux != inicio);
+                cout<<"("<< inicio->getDato() << ")";
 
             }else{
-                cout << "Lista vacia" << endl;
+                cout << "\n\tLista vacia" << endl;
+                return vacio = true;
             }
-            cout<<"("<< inicio->getDato() << ")";
             cout <<"\nLa lista tiene "<< tam <<" elementos "<< endl;
+
         }
        
 };

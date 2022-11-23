@@ -28,7 +28,7 @@ do{
         cout<<"2. Mostrar lista"<<endl;
         cout<<"3. Eliminar dato"<<endl;
         cout<<"4. Buscar dato"<<endl;
-        //cout<<"5. Modificar dato"<<endl;
+        cout<<"5. Modificar dato"<<endl;
         cout<<"6. Salir"<<endl;
         opcion = lista.charToInt();
 
@@ -63,7 +63,7 @@ do{
                         cout<<"\n";
                         system("pause");
                         break;
-                /*case 5:
+                case 5:
                         cout<<"\nIngrese el dato a modificar: ";
                         dato = lista.charToInt();
                         int nuevoDato;
@@ -72,22 +72,11 @@ do{
                         cout<<"\n";
                         lista.modificarDatoLista(dato, nuevoDato);
                         system("pause");
-                        break;*/
+                        break;
                 case 6:
                         cout<<"\nSaliendo..."<<endl;
                         break;
         }
 }while(opcion != 6);
-
-lista.insertarDatoLista(1);      
-lista.insertarDatoLista(2);
-lista.insertarDatoLista(3);
-
-lista.mostrarLista();
-
-lista.buscarDatoLista(2);
-
-
-
 
 }

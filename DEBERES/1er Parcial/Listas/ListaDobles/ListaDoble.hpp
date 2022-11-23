@@ -43,7 +43,9 @@ class ListaDoble{
             Nodo<T> *nuevo = new Nodo<T>(dato);
             Nodo<T> *aux = inicio;
             int cont = 1;
-            if(pos == 0){
+            if(inicio == NULL){
+                cout << "\n\tLista vacia" << endl;
+            }else if(pos == 0){
                 insertarPorInicio(dato);
             }else if(pos == tam){
                 insertarPorFin(dato);   
@@ -69,6 +71,7 @@ class ListaDoble{
             }else{
                 inicio = inicio->getSiguiente();
                 inicio->setAnterior(nullptr);
+                cout << "\n\tDato eliminado" << endl;
             }
             tam--;
         }
@@ -79,6 +82,7 @@ class ListaDoble{
             }else{
                 fin = fin->getAnterior();
                 fin->setSiguiente(nullptr);
+                cout << "\n\tDato eliminado" << endl;
             }
             tam--;
         }
@@ -86,7 +90,9 @@ class ListaDoble{
         void eliminarPorPosicion(int pos){
             Nodo<T> *aux = inicio;
             int cont = 0;
-            if(pos == 0){
+            if(inicio == NULL){
+                cout << "\n\tLista vacia" << endl; 
+            }else if(pos == 0){
                 eliminarPorInicio();
             }else if(pos == tam){
                 eliminarPorFin();   
@@ -106,7 +112,7 @@ class ListaDoble{
 
         void buscar(T dato){
             Nodo<T> *aux = inicio;
-            int cont = 0;
+            int cont = 1;
             bool encontrado = false;
             while(aux){
                 if(aux->getDato() == dato){
@@ -125,13 +131,19 @@ class ListaDoble{
             }
         }
 
-        void mostrar(){
+        bool mostrar(){
+            bool vacio = false;
             Nodo<T> *aux = inicio;
-            while(aux){
-                cout << aux->getDato() << " -> <- ";
-                aux = aux->getSiguiente();
-            }
+            if(inicio != NULL){
+                while(aux){
+                    cout << aux->getDato() << " -> <- ";
+                    aux = aux->getSiguiente();
+                }
             cout <<"NULL"<< endl;
+            }else{
+               cout << "\n\tLista vacia" << endl;
+               return vacio = true;
+            }
             cout <<"La lista tiene "<< tam <<" elementos "<< endl;
         }
 
