@@ -11,72 +11,113 @@
 */
 
 #include <iostream>
-#include "ListaSimple.cpp"
+#include "ListaSimple.hpp"
+#include "Validacion.hpp"
 
 using namespace std;
 
 int main() {
+        int opcion;
+        int dato;
+        int posicion;
+        ListaSimple<int> lista;
+        Validacion validacion;
+        do{
+                system("cls");
+                cout<<"|----------------------------------------------------------------|"<<endl;
+                cout<<"|                     .:MENU Lista Simple:.                      |"<<endl;
+                cout<<"!----------------------------------------------------------------|"<<endl;
+                cout<<"| 1. Insertar dato por cabeza    | 4. Eliminar dato por cabeza   |"<<endl;
+                cout<<"| 2. Insertar dato por cola      | 5. Eliminar dato por cola     |"<<endl;
+                cout<<"| 3. Insertar dato por posicion  | 6. Eliminar dato por posicion |"<<endl;
+                cout<<"!----------------------------------------------------------------|"<<endl;
+                cout<<"|                    ~ 7. Mostrar lista ~                        |"<<endl;
+                cout<<"|                    ~ 8. Buscar dato ~                          |"<<endl;
+                cout<<"|                    ~ 9. MCM Y MCD ~                            |"<<endl;
+                cout<<"|                    ~ 0. Salir ~                                |"<<endl;
+                cout<<"|----------------------------------------------------------------|"<<endl;
+                opcion = validacion.charToInt();
 
-int opcion;
-int dato;
-ListaSimple lista;       
-do{
-        system("cls");
-        cout<<".:MENU Lista Simple:."<<endl;
+                switch (opcion){
+                        case 1:
+                                cout<<"\nIngrese el dato que se va ingresar por cabeza: ";
+                                dato = validacion.charToInt();
+                                lista.insertarPorInicio(dato);
+                                cout<<"\n";
+                                system("pause");
+                                break;
+                        case 2:
+                                cout<<"\nIngrese el dato que se va ingresar por cola: ";
+                                dato = validacion.charToInt();
+                                lista.insertarPorFin(dato);
+                                cout<<"\n";
+                                system("pause");
+                                break;
+                        case 3:
+                                cout << "\n" << endl;
+                                if(lista.mostrar() == true){
+                                system("pause");
+                                }else {
+                                cout<<"\nIngrese el dato que se va ingresar por posicion: ";
+                                dato = validacion.charToInt();
+                                cout<<"\nIngrese la posicion donde se va a insertar el dato: ";
+                                posicion = validacion.charToInt();
+                                lista.insertarPorPosicion(dato,posicion);
+                                cout<<"\n";
+                                system("pause");
+                                }
+                                break;
+                        case 4:
+                                lista.eliminarPorInicio();
+                                cout<<"\n";
+                                system("pause");
+                                break;
+                        case 5:
+                                lista.eliminarPorFin();
+                                cout<<"\n";
+                                system("pause");
+                                break;
+                        case 6:
+                                cout << "\n" << endl;
+                                if(lista.mostrar() == true){
+                                system("pause");
+                                }else {
+                                cout<<"\nIngrese la posicion del dato que se va a eliminar: ";
+                                posicion = validacion.charToInt();
+                                lista.eliminarPorPosicion(posicion);
+                                cout<<"\n";
+                                system("pause"); 
+                                }
+                                break;
 
-        cout<<"1. Insertar dato a la lista"<<endl;
-        cout<<"2. Mostrar lista"<<endl;
-        cout<<"3. Eliminar dato"<<endl;
-        cout<<"4. Buscar dato"<<endl;
-        cout<<"5. Modificar dato"<<endl;
-        cout<<"6. Salir"<<endl;
-        opcion = lista.charToInt();
+                        case 7:
+                                cout<<"\n";
+                                lista.mostrar();
+                                cout<<"\n";
+                                system("pause");
+                                break;
 
-        switch (opcion){
-                case 1:
-                        cout<<"\nIngrese el dato: ";
-                        dato = lista.charToInt();
-                        lista.insertarDatoLista(dato);
-                        cout<<"\n";
-                        system("pause");
-                        break;
-                case 2:
-                        cout<<"\n";
-                        lista.mostrarLista();
-                        cout<<"\n";
-                        system("pause");
-                        break;
-                case 3:
-                        cout<<"\nLa lista es: ";
-                        lista.mostrarLista();
-                        cout<<"\nIngrese el dato a eliminar: ";
-                        dato = lista.charToInt();
-                        lista.eliminarDatoLista(dato);
-                        cout<<"\n";
-                        system("pause");
-                        break;
-                case 4:
-                        cout<<"\nIngrese el dato a buscar: ";
-                        dato = lista.charToInt();
-                        cout<<"\n";
-                        lista.buscarDatoLista(dato);
-                        cout<<"\n";
-                        system("pause");
-                        break;
-                case 5:
-                        cout<<"\nIngrese el dato a modificar: ";
-                        dato = lista.charToInt();
-                        int nuevoDato;
-                        cout<<"\nIngrese el nuevo dato: ";
-                        nuevoDato = lista.charToInt();
-                        cout<<"\n";
-                        lista.modificarDatoLista(dato, nuevoDato);
-                        system("pause");
-                        break;
-                case 6:
-                        cout<<"\nSaliendo..."<<endl;
-                        break;
-        }
-}while(opcion != 6);
+                        case 8:
+                                cout<<"\nIngrese el dato que se va a buscar: ";
+                                dato = validacion.charToInt();
+                                lista.buscar(dato);
+                                cout<<"\n";
+                                system("pause");
+                                break;
+                        case 9:
+                                cout<<"\n";
+                                lista.mcmmcdDeLista();
+                                cout<<"\n";
+                                system("pause");
+                                break;
+                        case 0:
+                                cout<<"\n\n\tSaliendo... \nGracias por usar nuestro programa!"<<endl;
+                                break;
+                }
+        }while(opcion != 0);
+
+
+
+
 
 }

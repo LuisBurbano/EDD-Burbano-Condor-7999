@@ -31,7 +31,7 @@ class Nodo{
         }
 
         ~Nodo(){
-            this;
+            
         }
 
         

@@ -13,11 +13,12 @@
 #pragma once
 #include <iostream>
 #include "Nodo.hpp"
+#include "Funciones.h"
 
 using namespace std;
 
 template <typename T>
-class ListaDoble{
+class ListaDoble : public Funciones {
     private:
         Nodo<T> *inicio = nullptr;
         Nodo<T> *fin = nullptr;
@@ -181,5 +182,48 @@ class ListaDoble{
             cout <<"\nLa lista tiene "<< tam <<" elementos "<< endl;
 
         }
-       
+
+        int calcularMCD(int a, int b){
+                if (a == 0){
+                    return b;
+                }else if (b == 0){
+                    return a;
+                }else if (a == b){
+                    return a;
+                    //return calcularMCD(b, a%b);
+                }else if (a > b){
+                    return calcularMCD(a-b, b);
+                }
+                return calcularMCD(a, b-a);         
+        }
+
+        int calcularMCM(int a, int b){
+            return (a*b)/calcularMCD(a,b);
+        }
+
+        void mcmmcdDeLista(){
+            Nodo<T> *aux = inicio;
+            int mcm = 0;
+            int mcd = 0;
+            int a = 0;
+            int b = 0;
+            if(inicio == NULL){
+                cout << "\n\tLista vacia" << endl;
+            }else if(inicio->getSiguiente() == inicio){
+                cout << "\n\tSolo hay un elemento en la lista" << endl;
+                cout << "\n\tSe necesitan minimo 2 elementos" << endl;
+            }else if(inicio != NULL){
+                a = aux -> getDato();
+                b = aux -> getSiguiente() -> getDato();
+                mcm = calcularMCM(a,b);
+                mcd = calcularMCD(a,b);
+                do{
+                    aux = aux -> getSiguiente();
+                    mcm = calcularMCM(mcm,aux -> getDato());
+                    mcd = calcularMCD(mcd,aux -> getDato());
+                }while(aux != inicio);
+                cout << "\n\t~El MCM: " << mcm <<endl;
+                cout << "\n\t~El MCD: " << mcd << endl;   
+            }
+        }   
 };
