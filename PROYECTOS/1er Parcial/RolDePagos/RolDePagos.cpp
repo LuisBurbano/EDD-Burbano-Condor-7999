@@ -4,8 +4,15 @@
 
 void RolDePagos::imprimirRol(void)
 {
-    //TODO: Implement RolDePagos::imprimirRol
-}
+    string cedula;
+
+    cedula=trabajador->ingresarCedula();    
+    trabajador->setCedula(cedula);
+    cedula = trabajador->getCedula();
+    cout << "Cedula: " << cedula << endl;
+
+    
+}   
 
 
 RolDePagos::RolDePagos()

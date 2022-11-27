@@ -8,38 +8,36 @@
 #if !defined(__ProyectoUnidad1_Trabajador_h)
 #define __ProyectoUnidad1_Trabajador_h
 
+#include<string>
 
-#include<iostream>
-
-using namespace std;
 
 class Trabajador
 {
 public:
-   char *getCedula(void);
-   void setCedula(char* newCedula);
-   char *getNombre(void);
-   void setNombre(char *newNombre);
-   char *getApellido(void);
-   void setApellido(char *newApellido);
-   char *getTelefono(void);
-   void setTelefono(char *newTelefono);
-   char *getDireccion(void);
-   void setDireccion(char *newDireccion);
-   char *getCorreo(void);
-   void setCorreo(char *newCorreo);
-   char *validarCedula(char *);
-   void ingresarCedula(void);
+   std::string getCedula(void);
+   void setCedula(std::string newCedula);
+   std::string getNombre(void);
+   void setNombre(std::string newNombre);
+   std::string getApellido(void);
+   void setApellido(std::string newApellido);
+   std::string getTelefono(void);
+   void setTelefono(std::string newTelefono);
+   std::string getDireccion(void);
+   void setDireccion(std::string newDireccion);
+   std::string getCorreo(void);
+   void setCorreo(std::string newCorreo);
+   std::string validarCedula(char*);
+   std::string ingresarCedula(void);
    Trabajador();
 
 protected:
 private:
-   char *nombre;
-   char *apellido;
-   char *cedula;
-   char *telefono;
-   char *direccion;
-   char *correo;
+   std::string nombre;
+   std::string apellido;
+   std::string *cedula;
+   std::string telefono;
+   std::string direccion;
+   std::string correo;
 
 
 };

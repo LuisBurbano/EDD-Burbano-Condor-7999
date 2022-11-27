@@ -1,14 +1,15 @@
 
 #include "RolDePagos.cpp"
 
-int main(int argc, char const *argv[])
+int main(int argc, char* argv[])
 {
 
-    RolDePagos *rol;
+    RolDePagos rol;  
 
-    rol->imprimirRol();
-    rol->trabajador->ingresarCedula();
+    
+    rol.imprimirRol();
+    
+    
 
-    free(rol);
     return 0;
 }

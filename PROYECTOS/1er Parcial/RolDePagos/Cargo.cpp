@@ -8,22 +8,22 @@
 #include "Cargo.h"
 
 
-string Cargo::getEmpresa(void)
+std::string Cargo::getEmpresa(void)
 {
    return empresa;
 }
 
-void Cargo::setEmpresa(string newEmpresa)
+void Cargo::setEmpresa(std::string newEmpresa)
 {
    empresa = newEmpresa;
 }
 
-string Cargo::getPuesto(void)
+std::string Cargo::getPuesto(void)
 {
    return puesto;
 }
 
-void Cargo::setPuesto(string newPuesto)
+void Cargo::setPuesto(std::string newPuesto)
 {
    puesto = newPuesto;
 }
@@ -39,12 +39,12 @@ void Cargo::setValorHora(double newValorHora)
    valorHora = newValorHora;
 }
 
-string Cargo::getDepartamento(void)
+std::string Cargo::getDepartamento(void)
 {
    return departamento;
 }
 
-void Cargo::setDepartamento(string newDepartamento)
+void Cargo::setDepartamento(std::string newDepartamento)
 {
    departamento = newDepartamento;
 }

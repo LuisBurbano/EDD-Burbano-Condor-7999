@@ -7,31 +7,28 @@
 
 #if !defined(__ProyectoUnidad1_Cargo_h)
 #define __ProyectoUnidad1_Cargo_h
-#include<iostream>
+#include<string>
 
-#include<cstring>
-
-using namespace std;
 
 class Cargo
 {
 public:
-   string getEmpresa(void);
-   void setEmpresa(string newEmpresa);
-   string getPuesto(void);
-   void setPuesto(string newPuesto);
+   std::string getEmpresa(void);
+   void setEmpresa(std::string newEmpresa);
+   std::string getPuesto(void);
+   void setPuesto(std::string newPuesto);
    double getValorHora(void);
    void setValorHora(double newValorHora);
-   string getDepartamento(void);
-   void setDepartamento(string newDepartamento);
+   std::string getDepartamento(void);
+   void setDepartamento(std::string newDepartamento);
    Cargo();
 
 protected:
 private:
-   string puesto;
+   std::string puesto;
    double valorHora;
-   string departamento;
-   string empresa;
+   std::string departamento;
+   std::string empresa;
 
 
 };

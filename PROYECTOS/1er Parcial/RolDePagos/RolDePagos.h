@@ -13,22 +13,19 @@
 #include "Cargo.cpp"
 #include "Trabajador.cpp"
 
-class Ingresos;
-class Egresos;
-class Cargo;
-class Trabajador;
+
 
 class RolDePagos
 {
 public:
 
-   void imprimirRol(void);
+   
 
    Ingresos *ingresos;
    Egresos *egresos;
    Cargo *cargo;
    Trabajador *trabajador;
-
+   void imprimirRol(void);
    RolDePagos();
 
 protected:

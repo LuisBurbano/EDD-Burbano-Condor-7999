@@ -7,71 +7,66 @@
 
 #include "Trabajador.h"
 #include "Validacion.hpp"
-#include <string.h>
-
-
-
-
 
 Validacion validacion;
 
-char *Trabajador::getCedula(void)
+std::string Trabajador::getCedula(void)
 {
-   return cedula;
+   return *cedula;
 }
 
-void Trabajador::setCedula(char *newCedula)
+void Trabajador::setCedula(std::string newCedula)
 {
-   
-   cedula = newCedula;
+
+   this->cedula = &newCedula;
 }
 
-char *Trabajador::getNombre(void)
+std::string Trabajador::getNombre(void)
 {
    return nombre;
 }
 
-void Trabajador::setNombre(char *newNombre)
+void Trabajador::setNombre(std::string newNombre)
 {
    nombre = newNombre;
 }
 
-char *Trabajador::getApellido(void)
+std::string Trabajador::getApellido(void)
 {
    return apellido;
 }
 
-void Trabajador::setApellido(char *newApellido)
+void Trabajador::setApellido(std::string newApellido)
 {
    apellido = newApellido;
 }
 
-char *Trabajador::getTelefono(void)
+std::string Trabajador::getTelefono(void)
 {
    return telefono;
 }
 
-void Trabajador::setTelefono(char *newTelefono)
+void Trabajador::setTelefono(std::string newTelefono)
 {
    telefono = newTelefono;
 }
 
-char *Trabajador::getDireccion(void)
+std::string Trabajador::getDireccion(void)
 {
    return direccion;
 }
 
-void Trabajador::setDireccion(char *newDireccion)
+void Trabajador::setDireccion(std::string newDireccion)
 {
    direccion = newDireccion;
 }
 
-char *Trabajador::getCorreo(void)
+std::string Trabajador::getCorreo(void)
 {
    return correo;
 }
 
-void Trabajador::setCorreo(char *newCorreo)
+void Trabajador::setCorreo(std::string newCorreo)
 {
    correo = newCorreo;
 }
@@ -81,9 +76,9 @@ Trabajador::Trabajador()
    // TODO : implement
 }
 
-char* Trabajador::validarCedula(char *cedulaIngresada)
+std::string Trabajador::validarCedula(char *cedulaIngresada)
 {
-
+   string cedula;
    char cedulaPares[5];
    char cedulaImpares[5];
 
@@ -94,6 +89,7 @@ char* Trabajador::validarCedula(char *cedulaIngresada)
    int sumaImpares = 0;
    int sumaTotal = 0;
    int digitoVerificador = 0;
+   cedula = cedulaIngresada;
    for (int i = 0; i < 10; i++)
    {
       if (i % 2 == 0)
@@ -137,32 +133,25 @@ char* Trabajador::validarCedula(char *cedulaIngresada)
    else if (digitoVerificador != atoi(&cedulaIngresada[9]))
    {
       cout << " Cedula Invalida" << endl;
-      cedulaIngresada=strdup("0");
+      
+      cedula = "0";	
    }
-   return cedulaIngresada;
-   
+   return cedula;
 }
 
-void Trabajador::ingresarCedula()
+std::string Trabajador::ingresarCedula()
 {
    char *cedulaIngresada;
-   char *cedulaValidada;
-   char *p ="alcachofa";
-   string almeja;
-
-   almeja="holis bolis";
-   
-
-   
-   
+   std::string cedulaValidada;
+   std::string cedulaIngresadaAux;
    do
    {
       cedulaIngresada = validacion.integerImput(" > ");
-      cedulaValidada=validarCedula(cedulaIngresada);
+      cedulaIngresadaAux = cedulaIngresada;
+      cedulaValidada = validarCedula(cedulaIngresada);
+
    } while (cedulaIngresada != cedulaValidada);
 
-
-cout<<almeja<<endl;
-   setCedula(cedulaIngresada);   
-     
+   setCedula(cedulaIngresada);
+   return cedulaValidada;
 }
