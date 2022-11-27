@@ -10,27 +10,33 @@
 
 #include "Ingresos.cpp"
 #include "Egresos.cpp"
-#include "Cargo.cpp"
 #include "Trabajador.cpp"
 
 
-
+template <typename T>
 class RolDePagos
 {
 public:
-
    
-
-   Ingresos *ingresos;
-   Egresos *egresos;
-   Cargo *cargo;
-   Trabajador *trabajador;
-   void imprimirRol(void);
+   T* getIngresos(void);
+   void setIngresos(T* newIngresos);
+   T* getEgresos(void); 
+   void setEgresos(T* newEgresos);
+   T* getTrabajador(void);
+   void setTrabajador(T* newTrabajador);
+   
+   void imprimirRol(T*,Ingresos*);
+   T* generarTrabajador();
+   Ingresos* generarIngresos();
+   T* generarEgresos();
+   
    RolDePagos();
 
 protected:
 private:
-
+   T *ingresos;
+   T *egresos;   
+   T *trabajador;
 };
 
 #endif

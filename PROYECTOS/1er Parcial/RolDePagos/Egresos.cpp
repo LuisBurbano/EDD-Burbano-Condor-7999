@@ -64,6 +64,28 @@ void Egresos::setTotalEgresos(double newTotalEgresos)
    totalEgresos = newTotalEgresos;
 }
 
+double Egresos::calcularTotalEgresos(void)
+{
+   return aporteIESS + impuestoRenta + multas + anticipoQuincena;
+}
+
+double Egresos::calcularAporteIESS(double sueldo)
+{
+   return sueldo * 0.09;
+}
+
+double Egresos::calcularImpuestoRenta(double sueldo)
+{
+   return sueldo * 0.1;
+}
+
+double Egresos::calcularMultas(int cantidadMultas, double valorMulta)
+{
+   return cantidadMultas * valorMulta;
+}
+
+
+
 Egresos::Egresos()
 {
    // TODO : implement

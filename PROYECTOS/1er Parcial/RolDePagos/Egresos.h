@@ -21,6 +21,10 @@ public:
    void setAnticipoQuincena(double newAnticipoQuincena);
    double getTotalEgresos(void);
    void setTotalEgresos(double newTotalEgresos);
+   double calcularTotalEgresos();
+   double calcularAporteIESS(double);
+   double calcularImpuestoRenta(double);
+   double calcularMultas(int, double);
    Egresos();
 
 protected:
@@ -30,7 +34,6 @@ private:
    double multas;
    double anticipoQuincena;
    double totalEgresos;
-
 
 };
 

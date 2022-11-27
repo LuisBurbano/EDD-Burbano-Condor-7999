@@ -23,52 +23,71 @@ void Trabajador::setCedula(std::string newCedula)
 
 std::string Trabajador::getNombre(void)
 {
-   return nombre;
+   return *nombre;
 }
 
 void Trabajador::setNombre(std::string newNombre)
 {
-   nombre = newNombre;
+   this->nombre = &newNombre;
 }
 
 std::string Trabajador::getApellido(void)
 {
-   return apellido;
+   return *apellido;
 }
 
 void Trabajador::setApellido(std::string newApellido)
 {
-   apellido = newApellido;
+   this->apellido = &newApellido;
 }
 
 std::string Trabajador::getTelefono(void)
 {
-   return telefono;
+   return *telefono;
 }
 
 void Trabajador::setTelefono(std::string newTelefono)
 {
-   telefono = newTelefono;
+   this->telefono = &newTelefono;
 }
 
 std::string Trabajador::getDireccion(void)
 {
-   return direccion;
+   return *direccion;
 }
 
 void Trabajador::setDireccion(std::string newDireccion)
 {
-   direccion = newDireccion;
+   this->direccion = &newDireccion;
 }
 
 std::string Trabajador::getCorreo(void)
 {
-   return correo;
+   return *correo;
 }
 
 void Trabajador::setCorreo(std::string newCorreo)
 {
-   correo = newCorreo;
+   this->correo = &newCorreo;
+}
+
+std::string Trabajador::getCargo(void)
+{
+   return *cargo;
+}
+
+void Trabajador::setCargo(std::string newCargo)
+{
+   this->cargo = &newCargo;
+}
+std::string Trabajador::getDepartamento(void)
+{
+   return *departamento;
+}
+
+void Trabajador::setDepartamento(std::string newDepartamento)
+{
+   this->departamento = &newDepartamento;
 }
 
 Trabajador::Trabajador()
@@ -152,6 +171,104 @@ std::string Trabajador::ingresarCedula()
 
    } while (cedulaIngresada != cedulaValidada);
 
-   setCedula(cedulaIngresada);
    return cedulaValidada;
+}
+
+std::string Trabajador::ingresarNombre()
+{
+   std::string nombreIngresado;
+   nombreIngresado = validacion.charImput(" > ");
+   return nombreIngresado;
+}
+
+std::string Trabajador::ingresarApellido()
+{
+   std::string apellidoIngresado;
+   apellidoIngresado = validacion.charImput(" > ");
+   return apellidoIngresado;
+}
+
+std::string Trabajador::ingresarTelefono()
+{
+   std::string telefonoIngresado;
+   telefonoIngresado = validacion.integerImput(" > ");
+   return telefonoIngresado;
+}
+
+std::string Trabajador::ingresarDireccion()
+{
+   std::string direccionIngresada;
+   direccionIngresada = validacion.charImput(" > ");
+   return direccionIngresada;
+}
+
+std::string Trabajador::ingresarCorreo()
+{
+   std::string correoIngresado;
+   correoIngresado = validacion.charImput(" > ");
+   return correoIngresado;
+}
+std::string Trabajador::ingresarCargo()
+{
+   string cargoIngresado;
+   cargoIngresado = validacion.charImput(" > ");
+   return cargoIngresado;
+}
+
+
+std::string Trabajador::ingresarDepartamento()
+{
+   std::string departamentoIngresado;
+   departamentoIngresado = validacion.charImput(" > ");
+   return departamentoIngresado;
+}
+
+void Trabajador::ingresarDatos(){
+   std::string cedulaIngresada;
+   std::string nombreIngresado;
+   std::string apellidoIngresado;
+   std::string telefonoIngresado;
+   std::string direccionIngresada;
+   std::string correoIngresado;
+   std::string cargoIngresado;
+   std::string departamentoIngresado;
+   cout << " Ingrese la cedula del trabajador: " << endl;
+   cedulaIngresada = ingresarCedula();
+   this->setCedula(cedulaIngresada);
+   cout << " Ingrese el nombre del trabajador: " << endl;
+   nombreIngresado = ingresarNombre();
+   this->setNombre(nombreIngresado);
+   cout << " Ingrese el apellido del trabajador: " << endl;
+   apellidoIngresado = ingresarApellido();
+   this->setApellido(apellidoIngresado);
+   cout << " Ingrese el telefono del trabajador: " << endl;
+   telefonoIngresado = ingresarTelefono();\
+   this->setTelefono(telefonoIngresado);
+   cout << " Ingrese la direccion del trabajador: " << endl;
+   direccionIngresada = ingresarDireccion();
+   this->setDireccion(direccionIngresada);
+   cout << " Ingrese el correo del trabajador: " << endl;
+   correoIngresado = ingresarCorreo();
+   this->setCorreo(correoIngresado);
+   cout << " Ingrese el cargo del trabajador: " << endl;
+   cargoIngresado = ingresarCargo();
+   this->setCargo(cargoIngresado);
+   cout << " Ingrese el departamento del trabajador: " << endl;
+   departamentoIngresado = ingresarDepartamento();
+   this->setDepartamento(departamentoIngresado);
+
+   cout<< " Trabajador ingresado con exito" << endl;
+   
+}
+
+
+void Trabajador::mostrarDatos(){
+   cout << " Cedula: " << this->getCedula() << endl;
+   cout << " Nombre: " << this->getNombre() << endl;
+   cout << " Apellido: " << this->getApellido() << endl;
+   cout << " Telefono: " << this->getTelefono() << endl;
+   cout << " Direccion: " << this->getDireccion() << endl;
+   cout << " Correo: " << this->getCorreo() << endl;
+   cout << " Cargo: " << this->getCargo() << endl;
+   cout << " Departamento: " << this->getDepartamento() << endl;
 }

@@ -7,6 +7,7 @@
 
 #if !defined(__ProyectoUnidad1_Ingresos_h)
 #define __ProyectoUnidad1_Ingresos_h
+#include <stdlib.h>
 
 class Ingresos
 {
@@ -23,7 +24,24 @@ public:
    void setHorasExtras(int newHorasExtras);
    double getTotalIngresos(void);
    void setTotalIngresos(double newTotalIngresos);
+
+   double calcularTotalIngresos();
+   double calcularHorasExtras(int, double);
+   double calcularHorasSuplementarias(int, double);
+   double calcularTotalComisiones(int, double);
+
+   double ingresarValorHoraExtra(void);
+   double ingresarValorHoraSuplementaria(void);
+   int ingresarHorasExtras(void);
+   int ingresarHorasSuplementarias(void);
+   int ingresarDiasTrabajados(void);
+   double ingresarRemuneracionUnificada(void);
+   double ingresarTotalComisiones(void);
+
+   void ingresarDatos(void);
+
    Ingresos();
+   ~Ingresos();
 
 protected:
 private:
@@ -33,8 +51,8 @@ private:
    int horasExtras;
    int totalComisiones;
    double totalIngresos;
-
-
+   double valorHora;
+   double valorHoraExtra;
 };
 
 #endif

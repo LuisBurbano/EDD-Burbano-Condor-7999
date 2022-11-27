@@ -26,20 +26,35 @@ public:
    void setDireccion(std::string newDireccion);
    std::string getCorreo(void);
    void setCorreo(std::string newCorreo);
+   std::string getCargo(void);
+   void setCargo(std::string newCargo);
+   std::string getDepartamento(void);
+   void setDepartamento(std::string newDepartamento);
    std::string validarCedula(char*);
    std::string ingresarCedula(void);
+
+
+   std::string ingresarNombre(void);
+   std::string ingresarApellido(void);
+   std::string ingresarTelefono(void);
+   std::string ingresarDireccion(void);
+   std::string ingresarCorreo(void);
+   std::string ingresarCargo(void);
+   std::string ingresarDepartamento(void);
+   void ingresarDatos(void);
+   void mostrarDatos(void);
    Trabajador();
 
 protected:
 private:
-   std::string nombre;
-   std::string apellido;
+   std::string *nombre;
+   std::string *apellido;
    std::string *cedula;
-   std::string telefono;
-   std::string direccion;
-   std::string correo;
-
-
+   std::string *telefono;
+   std::string *direccion;
+   std::string *correo;
+   std::string *cargo;
+   std::string *departamento;
 };
 
 #endif

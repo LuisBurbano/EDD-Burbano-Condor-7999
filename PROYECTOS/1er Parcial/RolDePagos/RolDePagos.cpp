@@ -1,21 +1,39 @@
 #include "RolDePagos.h"
 
+template <typename T>
 
-
-void RolDePagos::imprimirRol(void)
+void RolDePagos<T>::imprimirRol(T* newTrabajador, Ingresos* newIngresos)
 {
     string cedula;
-
-    cedula=trabajador->ingresarCedula();    
-    trabajador->setCedula(cedula);
-    cedula = trabajador->getCedula();
+    double sueldo;
+    cedula = newTrabajador->getCedula();
     cout << "Cedula: " << cedula << endl;
-
-    
+    sueldo = newIngresos->getSueldo();
+    cout<< "Sueldo: " << sueldo << endl;
 }   
+template <typename T>
+T* RolDePagos<T>::generarTrabajador()
+{
+    
+    cout<<"Ingrese los datos del trabajador"<<endl;
+    Trabajador *trabajador;
+    trabajador = new Trabajador();
+    trabajador->ingresarDatos();
+    return trabajador;
 
+}
+template <typename T>
+Ingresos* RolDePagos<T>::generarIngresos()
+{
+    cout<<"Ingrese los datos de los ingresos"<<endl;
+    Ingresos *ingresos;
+    ingresos = new Ingresos();
+    ingresos->ingresarDatos();
+    return ingresos;
+}
 
-RolDePagos::RolDePagos()
+template <typename T>
+RolDePagos<T>::RolDePagos()
 {
    
 }
