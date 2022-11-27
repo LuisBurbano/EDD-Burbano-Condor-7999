@@ -24,6 +24,13 @@ public:
    void setHorasExtras(int newHorasExtras);
    double getTotalIngresos(void);
    void setTotalIngresos(double newTotalIngresos);
+   double getValorHora(void);
+   void setValorHora(double newValorHora);
+   double getValorHoraExtra(void);
+   void setValorHoraExtra(double newValorHoraExtra);
+   double getValorHoraSuplementaria(void);
+   void setValorHoraSuplementaria(double newValorHoraSuplementaria);
+   
 
    double calcularTotalIngresos();
    double calcularHorasExtras(int, double);

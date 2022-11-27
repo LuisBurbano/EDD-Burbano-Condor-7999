@@ -9,8 +9,6 @@
 #define __ProyectoUnidad1_Trabajador_h
 
 #include<string>
-
-
 class Trabajador
 {
 public:

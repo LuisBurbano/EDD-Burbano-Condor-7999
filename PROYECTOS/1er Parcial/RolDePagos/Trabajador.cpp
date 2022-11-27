@@ -232,6 +232,7 @@ void Trabajador::ingresarDatos(){
    std::string correoIngresado;
    std::string cargoIngresado;
    std::string departamentoIngresado;
+   
    cout << " Ingrese la cedula del trabajador: " << endl;
    cedulaIngresada = ingresarCedula();
    this->setCedula(cedulaIngresada);

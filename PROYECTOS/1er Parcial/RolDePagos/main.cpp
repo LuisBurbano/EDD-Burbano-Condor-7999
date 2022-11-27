@@ -14,6 +14,5 @@ int main(int argc, char* argv[])
     //trabajador->mostrarDatos();
     ingresos=rol.generarIngresos();
     rol.imprimirRol(trabajador, ingresos);  
-
     return 0;
 }
