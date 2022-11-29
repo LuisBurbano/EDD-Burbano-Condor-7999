@@ -10,73 +10,61 @@
 
 Validacion validacionIngresos;
 
-
-//getters y setters
+// getters y setters
 int Ingresos::getTotalComisiones(void)
 {
    return totalComisiones;
 }
-
 
 void Ingresos::setTotalComisiones(int newTotalComisiones)
 {
    totalComisiones = newTotalComisiones;
 }
 
-
 int Ingresos::getDiasTrabajados(void)
 {
    return diasTrabajados;
 }
-
 
 void Ingresos::setDiasTrabajados(int newDiasTrabajados)
 {
    diasTrabajados = newDiasTrabajados;
 }
 
-
 double Ingresos::getRemuneracionUnificada(void)
 {
    return remuneracionUnificada;
 }
-
 
 void Ingresos::setRemuneracionUnificada(double newRemuneracionUnificada)
 {
    remuneracionUnificada = newRemuneracionUnificada;
 }
 
-
 int Ingresos::getHorasSuplementarias(void)
 {
    return horasSuplementarias;
 }
-
 
 void Ingresos::setHorasSuplementarias(int newHorasSuplementarias)
 {
    horasSuplementarias = newHorasSuplementarias;
 }
 
-
 int Ingresos::getHorasExtras(void)
 {
    return horasExtras;
 }
-
 
 void Ingresos::setHorasExtras(int newHorasExtras)
 {
    horasExtras = newHorasExtras;
 }
 
-
 double Ingresos::getTotalIngresos(void)
 {
    return totalIngresos;
 }
-
 
 void Ingresos::setTotalIngresos(double newTotalIngresos)
 {
@@ -103,6 +91,23 @@ void Ingresos::setValorHoraExtra(double newValorHoraExtra)
 //------------------> FIN de getters y setters
 
 //-------------------> Inicio de metodos
+
+
+int Ingresos::ingresoInputOnlyNumber(std::string mensaje)
+{
+   int valor;
+   cout << mensaje;
+   valor = validacionIngresos.charToInt();
+   return valor;
+}
+
+double Ingresos::ingresoInputOnlyDouble(std::string mensaje){
+   double valor;
+   cout << mensaje;
+   valor = validacionIngresos.charToFloat();
+   return valor;
+}
+
 double Ingresos::calcularTotalIngresos()
 {
    return calcularHorasExtras(horasExtras, valorHoraExtra) + calcularHorasSuplementarias(horasSuplementarias, valorHora) + calcularTotalComisiones(totalComisiones, remuneracionUnificada);
@@ -123,62 +128,9 @@ double Ingresos::calcularTotalComisiones(int totalComisiones, double valorComisi
    return totalComisiones * valorComision;
 }
 
-double Ingresos::ingresarValorHoraExtra(void)
-{
-   double valorHoraExtra;
-   cout << "Ingrese el valor de la hora extra: ";
-   valorHoraExtra = validacionIngresos.charToFloat();
-   return valorHoraExtra;
-}
 
-double Ingresos::ingresarValorHoraSuplementaria(void)
+void Ingresos::ingresarDatos()
 {
-   double valorHora;
-   cout << "Ingrese el valor de la hora suplementaria: ";
-   valorHora = validacionIngresos.charToFloat();
-   return valorHora;
-}
-
-int Ingresos::ingresarHorasExtras(void)
-{
-   int horasExtras;
-   cout << "Ingrese las horas extras: ";
-   horasExtras = validacionIngresos.charToInt();
-   return horasExtras;
-}
-
-int Ingresos::ingresarHorasSuplementarias(void)
-{
-   int horasSuplementarias;
-   cout << "Ingrese las horas suplementarias: ";
-   horasSuplementarias = validacionIngresos.charToInt();
-   return horasSuplementarias;
-}
-
-int Ingresos::ingresarDiasTrabajados(void)
-{
-   int diasTrabajados;
-   cout << "Ingrese los dias trabajados: ";
-   diasTrabajados = validacionIngresos.charToInt();
-   return diasTrabajados;
-}
-
-double Ingresos::ingresarRemuneracionUnificada(void)
-{
-   double remuneracionUnificada;
-   cout << "Ingrese la remuneracion unificada: ";
-   remuneracionUnificada = validacionIngresos.charToFloat();
-   return remuneracionUnificada;
-}
-double Ingresos::ingresarTotalComisiones(void)
-{
-   double totalComisiones;
-   cout << "Ingrese el total de comisiones: ";
-   totalComisiones = validacionIngresos.charToFloat();
-   return totalComisiones;
-}
-
-void Ingresos::ingresarDatos(){
    double valorHora;
    double valorHoraExtra;
    int horasExtras;
@@ -186,36 +138,38 @@ void Ingresos::ingresarDatos(){
    int diasTrabajados;
    double remuneracionUnificada;
    double totalComisiones;
-   double totalIngresos;
+   double totalIngresos;   
+   std::string mensaje[] = {"Ingrese las horas extras: ", "Ingrese las horas suplementarias: ", "Ingrese los dias trabajados: ", "Ingrese la remuneracion unificada: ", "Ingrese el total de comisiones: "};
 
-   cout<<"Ingresos"<<endl;
-   cout<<"Ingrese el valor de la hora suplementaria: "<<endl;
-   valorHora = ingresarValorHoraSuplementaria();
+
+
+   cout << "Ingresos" << endl;
+   
+   valorHora = ingresoInputOnlyDouble("Ingrese el valor de la hora suplementaria: ");
    this->setValorHora(valorHora);
-   cout<<"Ingrese el valor de la hora extra: "<<endl;
-   valorHoraExtra = ingresarValorHoraExtra();
+
+   valorHoraExtra = ingresoInputOnlyDouble("Ingrese el valor de la hora extra: ");
    this->setValorHoraExtra(valorHoraExtra);
-   cout<<"Ingrese las horas extras: "<<endl;
-   horasExtras = ingresarHorasExtras();
+   
+   horasExtras = ingresoInputOnlyNumber("Ingrese las horas extras: ");
    this->setHorasExtras(horasExtras);
-   cout<<"Ingrese las horas suplementarias: "<<endl;
-   horasSuplementarias = ingresarHorasSuplementarias();
+
+   horasSuplementarias = ingresoInputOnlyNumber("Ingrese las horas suplementarias: ");
    this->setHorasSuplementarias(horasSuplementarias);
-   cout<<"Ingrese los dias trabajados: "<<endl;
-   diasTrabajados = ingresarDiasTrabajados();
+   
+   diasTrabajados = ingresoInputOnlyNumber("Ingrese los dias trabajados: ");
    this->setDiasTrabajados(diasTrabajados);
-   cout<<"Ingrese la remuneracion unificada: "<<endl;
-   remuneracionUnificada = ingresarRemuneracionUnificada();
+
+   remuneracionUnificada = ingresoInputOnlyDouble("Ingrese la remuneracion unificada: ");
    this->setRemuneracionUnificada(remuneracionUnificada);
-   cout<<"Ingrese el total de comisiones: "<<endl;
-   totalComisiones = ingresarTotalComisiones();
+
+   totalComisiones = ingresoInputOnlyNumber("Ingrese el total de comisiones: ");
    this->setTotalComisiones(totalComisiones);
    totalIngresos = calcularTotalIngresos();
-   cout<<"El total de ingresos es: "<<totalIngresos<<endl;
-
+   this->setTotalIngresos(totalIngresos);
+   cout << "El total de ingresos es: " << totalIngresos << endl;
 }
 
 Ingresos::Ingresos()
 {
-
 }

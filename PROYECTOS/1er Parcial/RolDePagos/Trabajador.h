@@ -28,10 +28,11 @@ public:
    void setCargo(std::string newCargo);
    std::string getDepartamento(void);
    void setDepartamento(std::string newDepartamento);
+
+
+
    std::string validarCedula(char*);
    std::string ingresarCedula(void);
-
-
    std::string ingresarNombre(void);
    std::string ingresarApellido(void);
    std::string ingresarTelefono(void);
