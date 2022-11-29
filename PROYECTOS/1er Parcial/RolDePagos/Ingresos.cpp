@@ -141,8 +141,6 @@ void Ingresos::ingresarDatos()
    double totalIngresos;   
    std::string mensaje[] = {"Ingrese las horas extras: ", "Ingrese las horas suplementarias: ", "Ingrese los dias trabajados: ", "Ingrese la remuneracion unificada: ", "Ingrese el total de comisiones: "};
 
-
-
    cout << "Ingresos" << endl;
    
    valorHora = ingresoInputOnlyDouble("Ingrese el valor de la hora suplementaria: ");
@@ -168,6 +166,36 @@ void Ingresos::ingresarDatos()
    totalIngresos = calcularTotalIngresos();
    this->setTotalIngresos(totalIngresos);
    cout << "El total de ingresos es: " << totalIngresos << endl;
+}
+
+void Ingresos::mostrarDatos(){
+   double valorHora;
+   valorHora = this->getValorHora();
+   double valorHoraExtra;
+   valorHoraExtra = this->getValorHoraExtra();
+   int horasExtras;
+   horasExtras = this->getHorasExtras();
+   int horasSuplementarias;
+   horasSuplementarias = this->getHorasSuplementarias();
+   int diasTrabajados;
+   diasTrabajados = this->getDiasTrabajados();
+   double remuneracionUnificada;
+   remuneracionUnificada = this->getRemuneracionUnificada();
+   double totalComisiones;
+   totalComisiones = this->getTotalComisiones();
+   double totalIngresos;   
+   totalIngresos = this->getTotalIngresos();
+   
+   cout<<endl<<"Valor hora: "<<valorHora<<endl;
+   cout<<endl<<"Valor hora extra: "<<valorHoraExtra<<endl;
+   cout<<endl<<"Horas extras: "<<horasExtras<<endl;
+   cout<<endl<<"Horas suplementarias: "<<horasSuplementarias<<endl;
+   cout<<endl<<"Dias trabajados: "<<diasTrabajados<<endl;
+   cout<<endl<<"Remuneracion unificada: "<<remuneracionUnificada<<endl;
+   cout<<endl<<"Total comisiones: "<<totalComisiones<<endl;
+   cout<<endl<<"Total ingresos: "<<totalIngresos<<endl;
+
+
 }
 
 Ingresos::Ingresos()

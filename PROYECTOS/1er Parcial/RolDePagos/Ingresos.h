@@ -38,7 +38,7 @@ public:
    double calcularHorasSuplementarias(int, double);
    double calcularTotalComisiones(int, double);
    void ingresarDatos(void);
-
+   void mostrarDatos(void);
    Ingresos();
    ~Ingresos();
 

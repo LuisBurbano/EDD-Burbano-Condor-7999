@@ -10,10 +10,10 @@ int main(int argc, char* argv[])
 
     Trabajador *trabajador;
     Ingresos *ingresos;
-    trabajador=rol.generarTrabajador();
+    //trabajador=rol.generarTrabajador();
     
-    trabajador->mostrarDatos();
-//    ingresos=rol.generarIngresos();
+    ingresos=rol.generarIngresos();
+    ingresos->mostrarDatos();
     //rol.imprimirRol(trabajador, ingresos);  
     free(trabajador);
     return 0;
