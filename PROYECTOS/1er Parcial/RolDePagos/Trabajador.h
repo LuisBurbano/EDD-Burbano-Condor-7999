@@ -29,9 +29,7 @@ public:
    std::string getDepartamento(void);
    void setDepartamento(std::string newDepartamento);
 
-
-
-   std::string validarCedula(char*);
+   std::string validarCedula(std::string );
    std::string ingresarCedula(void);
    std::string ingresarNombre(void);
    std::string ingresarApellido(void);
