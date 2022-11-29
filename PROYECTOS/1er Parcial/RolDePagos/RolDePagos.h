@@ -31,6 +31,9 @@ public:
    T* generarEgresos();
    
    RolDePagos();
+   void menuRolDePagos();
+   string toString(Trabajador trabajador, Ingresos ingresos, Egresos egresos);
+   void guardarArchivoTxt(string a);
 
 protected:
 private:

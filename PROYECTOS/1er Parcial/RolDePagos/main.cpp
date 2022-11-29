@@ -1,20 +1,23 @@
 
 #include "RolDePagos.cpp"
+#include "ListaDoble.hpp"
 
 int main(int argc, char* argv[])
 {
 
+    ListaDoble<string> lista;
+    RolDePagos<string> rol;  
 
-    
-    RolDePagos<Trabajador> rol;  
-
-    Trabajador *trabajador;
+    Trabajador *trabajador = new Trabajador();
     Ingresos *ingresos;
-    //trabajador=rol.generarTrabajador();
-    
-    ingresos=rol.generarIngresos();
-    ingresos->mostrarDatos();
-    //rol.imprimirRol(trabajador, ingresos);  
+    Egresos *egresos;
+    string rolDePagos;
+    trabajador->ingresarDatos(); 
+    //ingresos->ingresarDatos();
+    //ingresos->mostrarDatos();
+    rol.guardarArchivoTxt(trabajador->toString());
+    lista.insertarPorInicio(trabajador->toString());
+    lista.mostrar();  
     free(trabajador);
     return 0;
 }

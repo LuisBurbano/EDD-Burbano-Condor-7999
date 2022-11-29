@@ -26,6 +26,9 @@ public:
    double calcularImpuestoRenta(double);
    double calcularMultas(int, double);
    Egresos();
+   
+   string toString();
+
 
 protected:
 private:

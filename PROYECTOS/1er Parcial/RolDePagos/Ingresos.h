@@ -9,8 +9,10 @@
 #define __ProyectoUnidad1_Ingresos_h
 #include <stdlib.h>
 #include <string>
-class Ingresos
-{
+#include <iostream>
+#include <fstream>
+
+class Ingresos {
 public:
    int getTotalComisiones(void);
    void setTotalComisiones(int newTotalComisiones);
@@ -40,7 +42,8 @@ public:
    void ingresarDatos(void);
    void mostrarDatos(void);
    Ingresos();
-   ~Ingresos();
+
+   //string toString();
 
 protected:
 private:
