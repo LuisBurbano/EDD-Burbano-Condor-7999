@@ -10,11 +10,17 @@ int main(int argc, char* argv[])
 
     Trabajador *trabajador;
     Ingresos *ingresos;
-    trabajador=rol.generarTrabajador();
-    trabajador->mostrarDatos();
-    ingresos=rol.generarIngresos();
-    ingresos->mostrarDatos();
+    Egresos *egresos;
+    //trabajador=rol.generarTrabajador();
+    //trabajador->mostrarDatos();
+    //ingresos=rol.generarIngresos();
+    //ingresos->mostrarDatos();
     //rol.imprimirRol(trabajador, ingresos);  
+    egresos=rol.generarEgresos();
+    cout<<"Hola: "<< egresos->getTotalEgresos();
+    egresos->mostrarDatos();
     free(trabajador);
+    free(ingresos);
+    free(egresos);
     return 0;
 }

@@ -25,10 +25,10 @@ public:
    T* getTrabajador(void);
    void setTrabajador(T* newTrabajador);
    
-   void imprimirRol(T*,Ingresos*);
+   void imprimirRol(T*,Ingresos*, Egresos*);
    T* generarTrabajador();
    Ingresos* generarIngresos();
-   T* generarEgresos();
+   Egresos* generarEgresos();
    
    RolDePagos();
 

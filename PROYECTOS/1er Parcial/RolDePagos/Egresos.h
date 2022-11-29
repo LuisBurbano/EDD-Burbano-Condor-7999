@@ -11,6 +11,11 @@
 class Egresos
 {
 public:
+
+
+   // getters y setters
+   double getIngresosTotales(void);
+   void setIngresosTotales(double newIngresosTotales);
    double getAporteIESS(void);
    void setAporteIESS(double newAporteIESS);
    double getImpuestoRenta(void);
@@ -21,14 +26,20 @@ public:
    void setAnticipoQuincena(double newAnticipoQuincena);
    double getTotalEgresos(void);
    void setTotalEgresos(double newTotalEgresos);
+
+   //metodos
    double calcularTotalEgresos();
-   double calcularAporteIESS(double);
-   double calcularImpuestoRenta(double);
-   double calcularMultas(int, double);
+   double calcularAporteIESS();
+   double calcularImpuestoRenta();
+   double calcularMultas();
+   double calcularAnticipoQuincena();
+   void ingresarDatos(double);
+   void mostrarDatos(void);
    Egresos();
 
 protected:
 private:
+   double ingresosTotales;
    double aporteIESS;
    double impuestoRenta;
    double multas;
