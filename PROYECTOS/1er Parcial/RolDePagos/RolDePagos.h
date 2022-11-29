@@ -28,9 +28,12 @@ public:
    void imprimirRol(T*,Ingresos*, Egresos*);
    T* generarTrabajador();
    Ingresos* generarIngresos();
-   Egresos* generarEgresos();
+   Egresos* generarEgresos(double);
    
    RolDePagos();
+   void menuRolDePagos();
+   string toString(Trabajador trabajador, Ingresos ingresos, Egresos egresos);
+   void guardarArchivoTxt(string a);
 
 protected:
 private:

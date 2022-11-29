@@ -1,23 +1,26 @@
 
 #include "RolDePagos.cpp"
+#include "ListaDoble.hpp"
 
 int main(int argc, char* argv[])
 {
 
+    ListaDoble<string> lista;
+    RolDePagos<string> rol;  
 
-    
-    RolDePagos<Trabajador> rol;  
-
+    RolDePagos<Trabajador> rol2;
     Trabajador *trabajador;
     Ingresos *ingresos;
     Egresos *egresos;
-    //trabajador=rol.generarTrabajador();
+
+    //trabajador = rol2.generarTrabajador();
     //trabajador->mostrarDatos();
-    //ingresos=rol.generarIngresos();
-    //ingresos->mostrarDatos();
+    ingresos= rol2.generarIngresos();
+    ingresos->mostrarDatos();
     //rol.imprimirRol(trabajador, ingresos);  
-    egresos=rol.generarEgresos();
-    cout<<"Hola: "<< egresos->getTotalEgresos();
+    egresos=rol.generarEgresos(ingresos->getTotalIngresos());
+
+    // cout<<"Hola: "<< egresos->getTotalEgresos();
     egresos->mostrarDatos();
     free(trabajador);
     free(ingresos);

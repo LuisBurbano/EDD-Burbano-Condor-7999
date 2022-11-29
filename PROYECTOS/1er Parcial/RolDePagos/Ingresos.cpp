@@ -139,7 +139,7 @@ void Ingresos::ingresarDatos()
    double remuneracionUnificada;
    double totalComisiones;
    double totalIngresos;   
-   std::string mensaje[] = {"Ingrese las horas extras: ", "Ingrese las horas suplementarias: ", "Ingrese los dias trabajados: ", "Ingrese la remuneracion unificada: ", "Ingrese el total de comisiones: "};
+
 
    cout << "Ingresos" << endl;
    
@@ -194,10 +194,13 @@ void Ingresos::mostrarDatos(){
    cout<<endl<<"Remuneracion unificada: "<<remuneracionUnificada<<endl;
    cout<<endl<<"Total comisiones: "<<totalComisiones<<endl;
    cout<<endl<<"Total ingresos: "<<totalIngresos<<endl;
-
-
 }
 
-Ingresos::Ingresos()
-{
+Ingresos::Ingresos(){
+   
 }
+
+//string Ingresos::toString(){
+//   return "Total ingresos: " + to_string(calcularTotalIngresos()); //Se le puede ir añadiendo los demas atributos o lo que se desee
+// 
+//}

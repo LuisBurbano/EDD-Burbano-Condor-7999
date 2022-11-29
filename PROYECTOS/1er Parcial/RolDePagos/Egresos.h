@@ -36,6 +36,9 @@ public:
    void ingresarDatos(double);
    void mostrarDatos(void);
    Egresos();
+   
+   string toString();
+
 
 protected:
 private:

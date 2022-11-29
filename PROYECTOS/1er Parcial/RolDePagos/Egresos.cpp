@@ -200,3 +200,7 @@ Egresos::Egresos()
 {
    // TODO : implement
 }
+
+string Egresos::toString(){
+   return "Total egresos: " + to_string(calcularTotalEgresos()); //Se le puede ir añadiendo los demas atributos o lo que se desee
+}
