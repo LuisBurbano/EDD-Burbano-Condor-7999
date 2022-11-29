@@ -24,6 +24,10 @@ public:
    void setEgresos(T* newEgresos);
    T* getTrabajador(void);
    void setTrabajador(T* newTrabajador);
+   T* getRolDePagos(void);
+   void setRolDePagos(T* newRolDePagos);
+   double getSalario(void);
+   void setSalario(double newSalario);
    
    void imprimirRol(T*,Ingresos*, Egresos*);
    T* generarTrabajador();
@@ -40,6 +44,7 @@ private:
    T *ingresos;
    T *egresos;   
    T *trabajador;
+   double sueldo;
 };
 
 #endif

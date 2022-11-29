@@ -1,15 +1,26 @@
 #include "RolDePagos.h"
 
 template <typename T>
+double RolDePagos<T>::getSalario(void)
+{
+   return sueldo;
+}
 
+template <typename T>
+void RolDePagos<T>::setSalario(double newSalario)
+{
+   sueldo = newSalario;
+}
+
+template <typename T>
 void RolDePagos<T>::imprimirRol(T* newTrabajador, Ingresos* newIngresos, Egresos* newEgresos)
 {
-    string cedula;
-    double sueldo;
-    cedula = newTrabajador->getCedula();
-    cout << "Cedula: " << cedula << endl;
-    sueldo = newIngresos->getTotalIngresos();
-    cout<< "Sueldo: " << sueldo << endl;
+    
+    
+    newTrabajador->mostrarDatos();
+    newIngresos->mostrarDatos();
+    newEgresos->mostrarDatos();
+    cout<<"Sueldo Neto: "<<newIngresos->getTotalIngresos()-newEgresos->getTotalEgresos()<<endl;
 }   
 template <typename T>
 T* RolDePagos<T>::generarTrabajador()
@@ -28,7 +39,6 @@ Ingresos* RolDePagos<T>::generarIngresos()
     cout<<"Ingrese los datos de los ingresos"<<endl;
     Ingresos *ingresos;
     ingresos = new Ingresos();
-    cout<<"Hola"<<endl;
     ingresos->ingresarDatos();
     return ingresos;
 }
@@ -53,7 +63,9 @@ RolDePagos<T>::RolDePagos()
 
 template <typename T>
 string RolDePagos<T>::toString(Trabajador trabajador, Ingresos ingresos, Egresos egresos){
-    return trabajador.toString() + egresos.toString();
+
+    std:string texto =trabajador.toString() + egresos.toString() + ingresos.toString() + "Salario: " + to_string(ingresos.getTotalIngresos() - egresos.getTotalEgresos()) + "\r";
+    return texto;
 }
 
 template <typename T>

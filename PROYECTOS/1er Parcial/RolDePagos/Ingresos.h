@@ -38,9 +38,10 @@ public:
    double calcularTotalIngresos();
    double calcularHorasExtras(int, double);
    double calcularHorasSuplementarias(int, double);
-   double calcularTotalComisiones(int, double);
+   double calcularTotalComisiones();
    void ingresarDatos(void);
    void mostrarDatos(void);
+   std::string toString(void);
    Ingresos();
 
    //string toString();

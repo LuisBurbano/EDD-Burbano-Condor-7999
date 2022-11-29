@@ -13,15 +13,14 @@ int main(int argc, char* argv[])
     Ingresos *ingresos;
     Egresos *egresos;
 
-    //trabajador = rol2.generarTrabajador();
-    //trabajador->mostrarDatos();
-    ingresos= rol2.generarIngresos();
-    ingresos->mostrarDatos();
-    //rol.imprimirRol(trabajador, ingresos);  
-    egresos=rol.generarEgresos(ingresos->getTotalIngresos());
 
-    // cout<<"Hola: "<< egresos->getTotalEgresos();
-    egresos->mostrarDatos();
+    trabajador = rol2.generarTrabajador();
+    
+    ingresos= rol2.generarIngresos();
+    egresos=rol.generarEgresos(ingresos->getTotalIngresos());
+    rol2.imprimirRol(trabajador,ingresos,egresos);
+    rol2.guardarArchivoTxt(rol2.toString(*trabajador, *ingresos, *egresos));
+    
     free(trabajador);
     free(ingresos);
     free(egresos);
