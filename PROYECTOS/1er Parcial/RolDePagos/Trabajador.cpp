@@ -17,8 +17,8 @@ std::string Trabajador::getCedula(void)
 
 void Trabajador::setCedula(std::string newCedula)
 {
-
-   this->cedula = newCedula;
+   
+   this->cedula = newCedula;   
 }
 
 std::string Trabajador::getNombre(void)
@@ -95,7 +95,7 @@ Trabajador::Trabajador()
    // TODO : implement
 }
 
-std::string Trabajador::validarCedula(char *cedulaIngresada)
+std::string Trabajador::validarCedula(std::string cedulaIngresada)
 {
    string cedula;
    char cedulaPares[5];
@@ -144,14 +144,14 @@ std::string Trabajador::validarCedula(char *cedulaIngresada)
       }
    }
 
-   if (digitoVerificador == atoi(&cedulaIngresada[9]))
+   if (digitoVerificador == atoi(&(cedulaIngresada[9])))
    {
       cout << " Cedula Valida" << endl;
    }
-   else if (digitoVerificador != atoi(&cedulaIngresada[9]))
+   else if (digitoVerificador != atoi(&(cedulaIngresada[9])))
    {
-      cout << " Cedula Invalida" << endl;
 
+      cout << " Cedula Invalida" << endl;
       cedula = "0";
    }
    return cedula;
@@ -166,11 +166,16 @@ std::string Trabajador::ingresarCedula()
    {
       cedulaIngresada = validacion.integerImput("> ");
       cedulaIngresadaAux = cedulaIngresada;
-      cedulaValidada = validarCedula(cedulaIngresada);
+        
+      cedulaValidada = validarCedula(cedulaIngresadaAux);
+      if (cedulaValidada == "0")
+      {
+         cout << " Cedula Invalida, Ingrese nuevamente" << endl;
+      }
 
-   } while (cedulaIngresada != cedulaValidada);
+   } while (cedulaIngresadaAux != cedulaValidada);
 
-   return cedulaValidada;
+   return cedulaIngresadaAux;
 }
 
 std::string Trabajador::ingresarNombre()
@@ -234,8 +239,14 @@ void Trabajador::ingresarDatos()
 
    cout <<endl<< " \nIngrese la cedula del trabajador: " << endl;
    cedulaIngresada = ingresarCedula();
+   cout<<"Cedual del ingrso de datos: "<<cedulaIngresada<<endl;
    this->setCedula(cedulaIngresada);
+<<<<<<< HEAD
    cout<<endl << " \nIngrese el nombre del trabajador: " << endl;
+=======
+   cout<<"Cedual del ingrso de datos: "<<cedulaIngresada<<endl;
+   cout<<endl << " Ingrese el nombre del trabajador: " << endl;
+>>>>>>> 02cbfd4d9858d1233c1fcc33e09fd2d7d5fface0
    nombreIngresado = ingresarNombre();
    this->setNombre(nombreIngresado);
    cout<<endl << " \nIngrese el apellido del trabajador: " << endl;

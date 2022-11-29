@@ -10,6 +10,7 @@ int main(int argc, char* argv[])
 
     Trabajador *trabajador = new Trabajador();
     Ingresos *ingresos;
+<<<<<<< HEAD
     Egresos *egresos;
     string rolDePagos;
     trabajador->ingresarDatos(); 
@@ -18,6 +19,13 @@ int main(int argc, char* argv[])
     rol.guardarArchivoTxt(trabajador->toString());
     lista.insertarPorInicio(trabajador->toString());
     lista.mostrar();  
+=======
+    trabajador=rol.generarTrabajador();
+    trabajador->mostrarDatos();
+    ingresos=rol.generarIngresos();
+    ingresos->mostrarDatos();
+    //rol.imprimirRol(trabajador, ingresos);  
+>>>>>>> 02cbfd4d9858d1233c1fcc33e09fd2d7d5fface0
     free(trabajador);
     return 0;
 }
