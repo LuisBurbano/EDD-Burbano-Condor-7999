@@ -6,9 +6,9 @@ void RolDePagos<T>::imprimirRol(T* newTrabajador, Ingresos* newIngresos)
 {
     string cedula;
     double sueldo;
-    //cedula = newTrabajador->getCedula();
-    //cout << "Cedula: " << cedula << endl;
-    sueldo = newIngresos->getTotalIngresos();
+    cedula = newTrabajador->getCedula();
+    cout << "Cedula: " << cedula << endl;
+    //sueldo = newIngresos->getTotalIngresos();
     cout<< "Sueldo: " << sueldo << endl;
 }   
 template <typename T>

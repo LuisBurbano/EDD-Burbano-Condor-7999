@@ -46,14 +46,14 @@ public:
 
 protected:
 private:
-   std::string *nombre;
-   std::string *apellido;
-   std::string *cedula;
-   std::string *telefono;
-   std::string *direccion;
-   std::string *correo;
-   std::string *cargo;
-   std::string *departamento;
+   std::string nombre;
+   std::string apellido;
+   std::string cedula;
+   std::string telefono;
+   std::string direccion;
+   std::string correo;
+   std::string cargo;
+   std::string departamento;
 };
 
 #endif

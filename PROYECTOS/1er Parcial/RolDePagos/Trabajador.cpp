@@ -12,82 +12,82 @@ Validacion validacion;
 
 std::string Trabajador::getCedula(void)
 {
-   return *cedula;
+   return this->cedula;
 }
 
 void Trabajador::setCedula(std::string newCedula)
 {
 
-   this->cedula = &newCedula;
+   this->cedula = newCedula;
 }
 
 std::string Trabajador::getNombre(void)
 {
-   return *nombre;
+   return this->nombre;
 }
 
 void Trabajador::setNombre(std::string newNombre)
 {
-   this->nombre = &newNombre;
+   this->nombre = newNombre;
 }
 
 std::string Trabajador::getApellido(void)
 {
-   return *apellido;
+   return this->apellido;
 }
 
 void Trabajador::setApellido(std::string newApellido)
 {
-   this->apellido = &newApellido;
+   this->apellido = newApellido;
 }
 
 std::string Trabajador::getTelefono(void)
 {
-   return *telefono;
+   return this->telefono;
 }
 
 void Trabajador::setTelefono(std::string newTelefono)
 {
-   this->telefono = &newTelefono;
+   this->telefono = newTelefono;
 }
 
 std::string Trabajador::getDireccion(void)
 {
-   return *direccion;
+   return this->direccion;
 }
 
 void Trabajador::setDireccion(std::string newDireccion)
 {
-   this->direccion = &newDireccion;
+   this->direccion = newDireccion;
 }
 
 std::string Trabajador::getCorreo(void)
 {
-   return *correo;
+   return correo;
 }
 
 void Trabajador::setCorreo(std::string newCorreo)
 {
-   this->correo = &newCorreo;
+   this->correo = newCorreo;
 }
 
 std::string Trabajador::getCargo(void)
 {
-   return *cargo;
+   return cargo;
 }
 
 void Trabajador::setCargo(std::string newCargo)
 {
-   this->cargo = &newCargo;
+   this->cargo = newCargo;
 }
 std::string Trabajador::getDepartamento(void)
 {
-   return *departamento;
+   return departamento;
 }
 
 void Trabajador::setDepartamento(std::string newDepartamento)
 {
-   this->departamento = &newDepartamento;
+   this->departamento = newDepartamento;
 }
 
 Trabajador::Trabajador()
@@ -147,13 +147,12 @@ std::string Trabajador::validarCedula(char *cedulaIngresada)
    if (digitoVerificador == atoi(&cedulaIngresada[9]))
    {
       cout << " Cedula Valida" << endl;
-      
    }
    else if (digitoVerificador != atoi(&cedulaIngresada[9]))
    {
       cout << " Cedula Invalida" << endl;
-      
-      cedula = "0";	
+
+      cedula = "0";
    }
    return cedula;
 }
@@ -191,6 +190,7 @@ std::string Trabajador::ingresarApellido()
 std::string Trabajador::ingresarTelefono()
 {
    std::string telefonoIngresado;
+
    telefonoIngresado = validacion.integerImput(" > ");
    return telefonoIngresado;
 }
@@ -215,7 +215,6 @@ std::string Trabajador::ingresarCargo()
    return cargoIngresado;
 }
 
-
 std::string Trabajador::ingresarDepartamento()
 {
    std::string departamentoIngresado;
@@ -223,7 +222,8 @@ std::string Trabajador::ingresarDepartamento()
    return departamentoIngresado;
 }
 
-void Trabajador::ingresarDatos(){
+void Trabajador::ingresarDatos()
+{
    std::string cedulaIngresada;
    std::string nombreIngresado;
    std::string apellidoIngresado;
@@ -232,44 +232,61 @@ void Trabajador::ingresarDatos(){
    std::string correoIngresado;
    std::string cargoIngresado;
    std::string departamentoIngresado;
-   
-   cout << " Ingrese la cedula del trabajador: " << endl;
+
+   cout <<endl<< " Ingrese la cedula del trabajador: " << endl;
    cedulaIngresada = ingresarCedula();
    this->setCedula(cedulaIngresada);
-   cout << " Ingrese el nombre del trabajador: " << endl;
+   cout<<endl << " Ingrese el nombre del trabajador: " << endl;
    nombreIngresado = ingresarNombre();
    this->setNombre(nombreIngresado);
-   cout << " Ingrese el apellido del trabajador: " << endl;
+   cout<<endl << " Ingrese el apellido del trabajador: " << endl;
    apellidoIngresado = ingresarApellido();
    this->setApellido(apellidoIngresado);
-   cout << " Ingrese el telefono del trabajador: " << endl;
-   telefonoIngresado = ingresarTelefono();\
+   cout<<endl << " Ingrese el telefono del trabajador: " << endl;
+   telefonoIngresado = ingresarTelefono();
    this->setTelefono(telefonoIngresado);
-   cout << " Ingrese la direccion del trabajador: " << endl;
+   telefonoIngresado = this->getTelefono();
+   cout <<endl<< " Ingrese la direccion del trabajador: " << endl;
    direccionIngresada = ingresarDireccion();
    this->setDireccion(direccionIngresada);
-   cout << " Ingrese el correo del trabajador: " << endl;
+   cout <<endl<< " Ingrese el correo del trabajador: " << endl;
    correoIngresado = ingresarCorreo();
    this->setCorreo(correoIngresado);
-   cout << " Ingrese el cargo del trabajador: " << endl;
+   cout <<endl<< " Ingrese el cargo del trabajador: " << endl;
    cargoIngresado = ingresarCargo();
    this->setCargo(cargoIngresado);
-   cout << " Ingrese el departamento del trabajador: " << endl;
+   cout <<endl<< " Ingrese el departamento del trabajador: " << endl;
    departamentoIngresado = ingresarDepartamento();
    this->setDepartamento(departamentoIngresado);
 
-   cout<< " Trabajador ingresado con exito" << endl;
-   
+   cout << " Trabajador ingresado con exito" << endl;
 }
 
+void Trabajador::mostrarDatos()
+{
+   string cedulaMostrada;
+   cedulaMostrada = this->getCedula();
+   string nombreMostrado;
+   nombreMostrado = this->getNombre();
+   string apellidoMostrado;
+   apellidoMostrado = this->getApellido();
+   string telefonoMostrado;
+   telefonoMostrado = this->getTelefono();
+   string direccionMostrada;
+   direccionMostrada = this->getDireccion();
+   string correoMostrado;
+   correoMostrado = this->getCorreo();
+   string cargoMostrado;
+   cargoMostrado = this->getCargo();
+   string departamentoMostrado;
+   departamentoMostrado = this->getDepartamento();
 
-void Trabajador::mostrarDatos(){
-   cout << " Cedula: " << this->getCedula() << endl;
-   cout << " Nombre: " << this->getNombre() << endl;
-   cout << " Apellido: " << this->getApellido() << endl;
-   cout << " Telefono: " << this->getTelefono() << endl;
-   cout << " Direccion: " << this->getDireccion() << endl;
-   cout << " Correo: " << this->getCorreo() << endl;
-   cout << " Cargo: " << this->getCargo() << endl;
-   cout << " Departamento: " << this->getDepartamento() << endl;
+   cout << "Cedula: " << cedulaMostrada << endl;
+   cout << "Nombre: " << nombreMostrado << endl;
+   cout << "Apellido: " << apellidoMostrado << endl;
+   cout << "Telefono: " << telefonoMostrado << endl;
+   cout << "Direccion: " << direccionMostrada << endl;
+   cout << "Correo: " << correoMostrado << endl;
+   cout << "Cargo: " << cargoMostrado << endl;
+   cout << "Departamento: " << departamentoMostrado << endl;
 }
