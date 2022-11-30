@@ -229,6 +229,6 @@ Egresos::Egresos()
    // TODO : implement
 }
 
-string Egresos::toString(){
+std::string Egresos::toString(){
    return to_string(calcularTotalEgresos()); //Se le puede ir añadiendo los demas atributos o lo que se desee
 }

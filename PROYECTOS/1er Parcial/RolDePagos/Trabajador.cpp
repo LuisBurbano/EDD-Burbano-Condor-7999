@@ -97,8 +97,9 @@ void Trabajador::setDepartamento(std::string newDepartamento)
 
 Trabajador::Trabajador()
 {
-   // TODO : implement
+   
 }
+
 
 std::string Trabajador::validarCedula(std::string cedulaIngresada)
 {
@@ -164,21 +165,30 @@ std::string Trabajador::validarCedula(std::string cedulaIngresada)
 
 std::string Trabajador::ingresarCedula()
 {
+   
    char *cedulaIngresada;
    std::string cedulaValidada;
    std::string cedulaIngresadaAux;
+   bool usuarioExiste=false;
    do
    {
       cedulaIngresada = validacion.integerImput("> ");
       cedulaIngresadaAux = cedulaIngresada;
         
       cedulaValidada = validarCedula(cedulaIngresadaAux);
+
+      
+
       if (cedulaValidada == "0")
       {
          cout << " Cedula Invalida, Ingrese nuevamente" << endl;
       }
+      usuarioExiste = validacion.verificarUsuario(cedulaValidada);
+      if(usuarioExiste==true){
+         cout<<" El trabajador ya existe, ingrese uno valido"<<endl;
+      }
 
-   } while (cedulaIngresadaAux != cedulaValidada);
+   } while (cedulaIngresadaAux != cedulaValidada || usuarioExiste==true);
 
    return cedulaIngresadaAux;
 }
@@ -300,6 +310,6 @@ void Trabajador::mostrarDatos()
    cout << "Departamento: " << departamentoMostrado << endl;
 }
 
-string Trabajador::toString(){
+std::string Trabajador::toString(){
       return this -> getCedula() + " " + this -> getNombre() + " " + this -> getApellido();
 }
