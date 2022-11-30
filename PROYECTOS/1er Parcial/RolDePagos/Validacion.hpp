@@ -1,3 +1,14 @@
+/*	UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
+		INGENIERA DE SOFTWARE
+                
+	AUTORES:
+		Mateo Javier Condor Sosa 	 
+		Luis Ariel Burbano Pacheco       
+	FECHA DE CREACION:
+		21/11/2022         	
+	FECHA DE MODIFICACION:
+		29/11/2022   
+*/
 
 #pragma once
 #include <iostream>
@@ -145,13 +156,16 @@ public:
         cout << msj;
         while ((c = getch()) != 13)
         {
-            if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z' || c >= '0' && c <= '9' || c == '-' ){
+            if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z' || c >= '0' && c <= '9' || c == '-' || c == ' '){
                 cout << c;
                 a[i++] = c;
             }else if (c == '\b'){
                 i--;
                 cout << "\b \b";
             }
+        }
+        if(i<10){
+            cout << "\n\tLa direccion debe tener al menos 10 caracteres" << endl;
         }
         a[i] = '\0';
         return a;
@@ -187,6 +201,8 @@ public:
         a[i] = '\0';
         return a;
     }
+
+    
 
     int charToInt()
     {

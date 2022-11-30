@@ -1,13 +1,19 @@
-/***********************************************************************
- * Module:  Egresos.cpp
- * Author:  luis1
- * Modified: mi�rcoles, 23 de noviembre de 2022 20:04:22
- * Purpose: Implementation of the class Egresos
- ***********************************************************************/
+/*	UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
+		INGENIERA DE SOFTWARE
+                
+	AUTORES:
+		Mateo Javier Condor Sosa 	 
+		Luis Ariel Burbano Pacheco       
+	FECHA DE CREACION:
+		21/11/2022         	
+	FECHA DE MODIFICACION:
+		29/11/2022   
+*/
 
 #include "Egresos.h"
+#include "Validacion.hpp"
 
-
+Validacion validarEgresos;
 
 // getters y setters
 double Egresos::getIngresosTotales(void)
@@ -142,22 +148,44 @@ double Egresos::calcularImpuestoRenta()
 double Egresos::calcularMultas()
 {
    double multa = 0;
+   int opcion = 0;
    double cantidadMultas;
    double valorMulta;
-   cout << "Ingrese la cantidad de multas: ";
-   cin >> cantidadMultas;
-   cout << "Ingrese el valor de la multa: ";
-   cin >> valorMulta;
-   multa = cantidadMultas * valorMulta;
-
+   do{
+      cout << " \nEl trabajador tiene multas? 1. Si 2. No ";
+      cin >> opcion;
+      if(opcion == 1){
+         cout << " \nCuantas multas tiene? ";
+         cantidadMultas = validarEgresos.charToInt();
+         for (int i = 0; i < cantidadMultas; i++){
+            cout << " \nIngrese el valor de la multa " << i+1 << ": ";
+            multa += validarEgresos.charToFloat();
+         }
+         
+      }else{
+         multa = 0;
+      }
+      cout << " \nEl valor total de las multas es: " << multa << endl;
+   }while(opcion != 1 && opcion != 2);
    return multa;
 }
 
 double Egresos::calcularAnticipoQuincena()
 {
    double anticipo = 0;
-   cout<<"Ingrese el valor del anticipo de quincena: ";
-   cin>>anticipo;
+   int opcion = 0;
+   do{
+      cout << " \nEl trabajador recibio anticipo de quincena? 1. Si 2. No ";
+      opcion = validarEgresos.charToInt();
+      if(opcion == 1){
+         cout<<"\nIngrese el valor del anticipo de quincena: ";
+         anticipo = validarEgresos.charToFloat();
+      }else{
+         anticipo = 0;  
+      }
+      cout << " \nEl valor del anticipo de quincena es: " << anticipo << endl;
+   }while(opcion != 1 && opcion != 2);
+   
    return anticipo;
 }
 
@@ -186,12 +214,12 @@ void Egresos::mostrarDatos(){
    multas=this->getMultas();
    anticipoQuincena=this->getAnticipoQuincena();
    totalEgresos=this->getTotalEgresos();
-   cout<<"Ingresos Totales: "<<ingresosTotales<<endl;
-   cout<<"Aporte IESS: "<<aporteIESS<<endl;
-   cout<<"Impuesto Renta: "<<impuestoRenta<<endl;
-   cout<<"Multas: "<<multas<<endl;
-   cout<<"Anticipo Quincena: "<<anticipoQuincena<<endl;
-   cout<<"Total Egresos: "<<totalEgresos<<endl;
+   cout<<"\nIngresos Totales: "<<ingresosTotales;
+   cout<<"\nAporte IESS: "<<aporteIESS;
+   cout<<"\nImpuesto Renta: "<<impuestoRenta;
+   cout<<"\nMultas: "<<multas;
+   cout<<"\nAnticipo Quincena: "<<anticipoQuincena;
+   cout<<"\nTotal Egresos: "<<totalEgresos;
       
 }
 
@@ -202,5 +230,5 @@ Egresos::Egresos()
 }
 
 string Egresos::toString(){
-   return "Total egresos: " + to_string(calcularTotalEgresos()); //Se le puede ir añadiendo los demas atributos o lo que se desee
+   return to_string(calcularTotalEgresos()); //Se le puede ir añadiendo los demas atributos o lo que se desee
 }

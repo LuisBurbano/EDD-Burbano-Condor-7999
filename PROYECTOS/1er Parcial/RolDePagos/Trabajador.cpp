@@ -1,9 +1,14 @@
-/***********************************************************************
- * Module:  Trabajador.cpp
- * Author:  luis1
- * Modified: mi�rcoles, 23 de noviembre de 2022 19:59:13
- * Purpose: Implementation of the class Trabajador
- ***********************************************************************/
+/*	UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
+		INGENIERA DE SOFTWARE
+                
+	AUTORES:
+		Mateo Javier Condor Sosa 	 
+		Luis Ariel Burbano Pacheco       
+	FECHA DE CREACION:
+		21/11/2022         	
+	FECHA DE MODIFICACION:
+		29/11/2022   
+*/
 
 #include "Trabajador.h"
 #include "Validacion.hpp"
@@ -240,7 +245,7 @@ void Trabajador::ingresarDatos()
    cout <<endl<< " \nIngrese la cedula del trabajador: " << endl;
    cedulaIngresada = ingresarCedula();
    this->setCedula(cedulaIngresada);
-   cout<<endl << " Ingrese el nombre del trabajador: " << endl;
+   cout<<endl << "\nIngrese el nombre del trabajador: " << endl;
    nombreIngresado = ingresarNombre();
    this->setNombre(nombreIngresado);
    cout<<endl << " \nIngrese el apellido del trabajador: " << endl;
@@ -250,7 +255,7 @@ void Trabajador::ingresarDatos()
    telefonoIngresado = ingresarTelefono();
    this->setTelefono(telefonoIngresado);
    telefonoIngresado = this->getTelefono();
-   cout <<endl<< " Ingrese la direccion del trabajador: " << endl;
+   cout <<endl<< " \nIngrese la direccion del trabajador: " << endl;
    direccionIngresada = ingresarDireccion();
    this->setDireccion(direccionIngresada);
    cout <<endl<< " \nIngrese el correo del trabajador: " << endl;
@@ -296,5 +301,5 @@ void Trabajador::mostrarDatos()
 }
 
 string Trabajador::toString(){
-      return this -> getNombre() + " " + this -> getApellido() + " " + this -> getCedula();
+      return this -> getCedula() + " " + this -> getNombre() + " " + this -> getApellido();
 }

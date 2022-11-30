@@ -1,9 +1,14 @@
-/***********************************************************************
- * Module:  Trabajador.h
- * Author:  luis1
- * Modified: mi�rcoles, 23 de noviembre de 2022 19:59:13
- * Purpose: Declaration of the class Trabajador
- ***********************************************************************/
+/*	UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
+		INGENIERA DE SOFTWARE
+                
+	AUTORES:
+		Mateo Javier Condor Sosa 	 
+		Luis Ariel Burbano Pacheco       
+	FECHA DE CREACION:
+		21/11/2022         	
+	FECHA DE MODIFICACION:
+		29/11/2022   
+*/
 
 #if !defined(__ProyectoUnidad1_Trabajador_h)
 #define __ProyectoUnidad1_Trabajador_h

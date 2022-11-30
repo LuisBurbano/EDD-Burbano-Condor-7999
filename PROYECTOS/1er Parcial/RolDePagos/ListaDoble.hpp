@@ -7,7 +7,7 @@
 	FECHA DE CREACION:
 		21/11/2022         	
 	FECHA DE MODIFICACION:
-		22/11/2022   
+		29/11/2022   
 */
 #pragma once
 #include <iostream>

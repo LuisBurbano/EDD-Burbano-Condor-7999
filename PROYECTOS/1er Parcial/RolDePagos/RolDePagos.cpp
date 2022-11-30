@@ -1,4 +1,17 @@
+/*	UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
+		INGENIERA DE SOFTWARE
+                
+	AUTORES:
+		Mateo Javier Condor Sosa 	 
+		Luis Ariel Burbano Pacheco       
+	FECHA DE CREACION:
+		21/11/2022         	
+	FECHA DE MODIFICACION:
+		29/11/2022   
+*/
+
 #include "RolDePagos.h"
+#include <sstream>
 
 template <typename T>
 double RolDePagos<T>::getSalario(void)
@@ -14,13 +27,11 @@ void RolDePagos<T>::setSalario(double newSalario)
 
 template <typename T>
 void RolDePagos<T>::imprimirRol(T* newTrabajador, Ingresos* newIngresos, Egresos* newEgresos)
-{
-    
-    
+{  
     newTrabajador->mostrarDatos();
     newIngresos->mostrarDatos();
     newEgresos->mostrarDatos();
-    cout<<"Sueldo Neto: "<<newIngresos->getTotalIngresos()-newEgresos->getTotalEgresos()<<endl;
+    cout<<"\nSueldo Neto: "<<newIngresos->getTotalIngresos()-newEgresos->getTotalEgresos()<<endl;
 }   
 template <typename T>
 T* RolDePagos<T>::generarTrabajador()
@@ -64,22 +75,42 @@ RolDePagos<T>::RolDePagos()
 template <typename T>
 string RolDePagos<T>::toString(Trabajador trabajador, Ingresos ingresos, Egresos egresos){
 
-    std:string texto =trabajador.toString() + egresos.toString() + ingresos.toString() + "Salario: " + to_string(ingresos.getTotalIngresos() - egresos.getTotalEgresos()) + "\r";
+    std:string texto =trabajador.toString() + " " + ingresos.toString() + " " + egresos.toString() + " " + to_string(ingresos.getTotalIngresos() - egresos.getTotalEgresos());
     return texto;
 }
 
 template <typename T>
 void RolDePagos<T>::guardarArchivoTxt(string a){
     ofstream archivo;
-    
     archivo.open("RolDePagos.txt",ios::app);
     if(archivo.fail()){
         cout<<"No se pudo abrir el archivo";
         exit(1);
     }
-
-    archivo<<a + "\n"<<endl;
+    archivo<<a + "\n";
+    archivo.close();
 }
+
+template <typename T>
+string RolDePagos<T>::leerArchivoTxt(){
+    string texto;
+    string lectura;
+    ifstream archivo;
+    archivo.open("RolDePagos.txt",ios::in);
+    if(archivo.fail()){
+        cout<<"No se pudo abrir el archivo";
+        exit(1);
+    }
+    while(!archivo.eof()){
+        getline(archivo,texto,' ');
+        lectura += texto + " ";    
+    }
+    archivo.close();
+    return lectura;
+}
+
+
+
 
 
 template <typename T>
@@ -87,45 +118,27 @@ void RolDePagos<T>::menuRolDePagos(){
     int opcion;
     do{
         system("cls");
-        cout<<"1. Generar Rol de Pagos (Lista simple)"<<endl;
-        cout<<"2. Buscar Rol de Pagos "<<endl;
-        cout<<"3. Eliminar Rol de Pagos "<<endl;
-        cout<<"4. Salir "<<endl;
+        cout<<"1. Generar Rol de Pagos "<<endl;
+        cout<<"2. Ver Roles de pagos"<<endl;
+        cout<<"3. Buscar Rol de Pagos "<<endl;
+        cout<<"4. Eliminar Rol de Pagos "<<endl;
+        cout<<"5. Vizualizar trabajadores en la lista doble"<<endl;
+        cout<<"6. Buscar trabajador en la lista doble"<<endl;
+        cout<<"7. Salir "<<endl;
         cout<<"Ingrese una opcion: ";
         cin>>opcion;
         switch(opcion){
             case 1:
+                system("cls");
+                generarRolDePagos();
+                system("pause");
+                break;
+
+            case 2:
 
                 break;
-            case 2:
-                int opcion2;
-                do{
-                system("cls");
-                cout << "\nBuscar rol de pagos por:" << endl;
-                cout << "1. Cedula" << endl;
-                cout << "2. Nombre" << endl;
-                cout << "3. Apellido" << endl;
-                cout << "4. Regresar" << endl;
-                cout << "Ingrese una opcion: ";
-                cin >> opcion2;
-                    switch(opcion2){
-                        case 1:
-                            cout << "\nIngrese la cedula: ";
-                            
-                            break;
-                        case 2:
-                            cout << "\nIngrese el nombre: ";
-                            
-                            break;
-                        case 3:
-                            cout << "\nIngrese el apellido: ";
-                            
-                            break;
-                        case 4:
-
-                            break;
-                    }
-                }while(opcion2 != 4);
+            case 3:
+                
                 break;
             case 3:
 
@@ -135,6 +148,51 @@ void RolDePagos<T>::menuRolDePagos(){
                 cout << "\n\tGracias por usar nuestro programa " << endl;
                 break;
         }
-    }while(opcion != 4);
+    }while(opcion != 7);
     
 }
+
+template <typename T>
+void RolDePagos<T>::generarRolDePagos(){
+    Trabajador *trabajador;
+    Ingresos *ingresos;
+    Egresos *egresos;
+    trabajador = generarTrabajador();
+    ingresos = generarIngresos();
+    egresos = generarEgresos(ingresos->getTotalIngresos());
+    imprimirRol(trabajador, ingresos, egresos);
+    guardarArchivoTxt(toString(*trabajador, *ingresos, *egresos));
+}
+
+template <typename T>
+void RolDePagos<T>::buscarRolDePagos(){
+    int opcion2;
+    do{
+    system("cls");
+    cout << "\nBuscar rol de pagos por:" << endl;
+    cout << "1. Cedula" << endl;
+    cout << "2. Nombre" << endl;
+    cout << "3. Apellido" << endl;
+    cout << "4. Regresar" << endl;
+    cout << "Ingrese una opcion: ";
+    cin >> opcion2;
+        switch(opcion2){
+            case 1:
+                cout << "\nIngrese la cedula: ";
+                
+                break;
+            case 2:
+                cout << "\nIngrese el nombre: ";
+                
+                break;
+            case 3:
+                cout << "\nIngrese el apellido: ";
+                
+                break;
+            case 4:
+                break;
+        }
+
+    }while(opcion2 != 4);
+}
+                
