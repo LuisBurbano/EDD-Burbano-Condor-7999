@@ -154,7 +154,7 @@ class ListaDoble : public Funciones{
             Nodo<T> *aux = inicio;
             if(inicio != NULL){
                 while(aux){
-                    cout << aux->getDato() << " -> <- ";
+                    cout << aux->getDato() << " -> <- \n";
                     aux = aux->getSiguiente();
                 }
             cout <<"NULL"<< endl;
@@ -162,7 +162,7 @@ class ListaDoble : public Funciones{
                cout << "\n\tLista vacia" << endl;
                return vacio = true;
             }
-            cout <<"La lista tiene "<< tam <<" elementos "<< endl;
+            //cout <<"La lista tiene "<< tam <<" elementos "<< endl;
         }
 
         int calcularMCD(int a, int b){

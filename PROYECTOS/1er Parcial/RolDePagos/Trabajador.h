@@ -47,7 +47,7 @@ public:
    void mostrarDatos(void);
    Trabajador();
 
-   string toString();
+   std::string toString();
 
 protected:
 private:

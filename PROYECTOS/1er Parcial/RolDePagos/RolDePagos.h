@@ -43,9 +43,11 @@ public:
    void menuRolDePagos();
    string toString(Trabajador trabajador, Ingresos ingresos, Egresos egresos);
    void guardarArchivoTxt(string a);
-   string leerArchivoTxt();
+   
+   void verRolesDePago();
    void generarRolDePagos();
    void buscarRolDePagos();
+   void verRolesDePagoEnLista();
 
 protected:
 private:

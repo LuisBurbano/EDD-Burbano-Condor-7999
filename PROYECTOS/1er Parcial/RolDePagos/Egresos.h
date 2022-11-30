@@ -12,7 +12,7 @@
 
 #if !defined(__ProyectoUnidad1_Egresos_h)
 #define __ProyectoUnidad1_Egresos_h
-
+#include <iostream>
 class Egresos
 {
 public:
@@ -42,7 +42,7 @@ public:
    void mostrarDatos(void);
    Egresos();
    
-   string toString();
+   std::string toString();
 
 
 protected:
