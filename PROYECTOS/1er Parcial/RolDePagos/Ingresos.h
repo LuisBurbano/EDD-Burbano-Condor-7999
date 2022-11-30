@@ -38,6 +38,7 @@ public:
 
    int ingresoInputOnlyNumber(std::string mensaje);
    double ingresoInputOnlyDouble(std::string mensaje);
+   double ingresoRemuneracion(std::string mensaje);
    double calcularTotalIngresos();
    double calcularHorasExtras(int, double);
    double calcularHorasSuplementarias(int, double);

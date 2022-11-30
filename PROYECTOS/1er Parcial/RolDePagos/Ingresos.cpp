@@ -96,11 +96,11 @@ int Ingresos::ingresoInputOnlyNumber(std::string mensaje)
    valor = validacionIngresos.charToInt();
    if(valor == 0){
       do{
-         cout << "\n\t\tATENCION!! Este aviso se emitira una sola vez!! \n~ El valor ingresado es 0 esto significa que el trabajador no hizo horas extras ~" << endl;
+         cout << "\n\t\t\tATENCION!! \n~ El valor ingresado es 0 esto significa que el trabajador no hizo horas extras ~" << endl;
          cout << "\nDesea continuar? 1. Si 2. No";
          opcion = validacionIngresos.charToInt();
          if(opcion == 2){
-            valor = ingresoInputOnlyDouble(mensaje);
+            valor = ingresoInputOnlyNumber(mensaje);
          } 
       }while(opcion != 1 && opcion != 2);
    }
@@ -112,6 +112,16 @@ double Ingresos::ingresoInputOnlyDouble(std::string mensaje){
    double valor;
    cout << mensaje;
    valor = validacionIngresos.charToFloat();
+   return valor;
+}
+
+double Ingresos::ingresoRemuneracion(std::string mensaje){
+   double valor;
+   cout << mensaje;
+   if(valor < 425.00){   
+         cout << "\nEl valor del sueldo no puede ser menor al del suelo basico (425.00$)" << endl;
+         valor = ingresoRemuneracion(mensaje);
+   }
    return valor;
 }
 
@@ -173,6 +183,7 @@ void Ingresos::ingresarDatos()
    this->setHorasSuplementarias(horasSuplementarias);
 
    remuneracionUnificada = ingresoInputOnlyDouble("\nIngrese la remuneracion unificada: ");
+
    this->setRemuneracionUnificada(remuneracionUnificada);
 
    //totalComisiones = calcularTotalComisiones();

@@ -137,70 +137,6 @@ void RolDePagos<T>::verRolesDePagoEnLista()
 
 
 template <typename T>
-void RolDePagos<T>::menuRolDePagos()
-{
-    int opcion;
-    do
-    {
-        system("cls");
-        cout << "1. Generar Rol de Pagos " << endl;
-        cout << "2. Ver Roles de pagos" << endl;
-        cout << "3. Buscar Rol de Pagos " << endl;
-        cout << "4. Vizualizar trabajadores en la lista doble" << endl;
-        cout << "5. Salir " << endl;
-        cout << "Ingrese una opcion: ";
-        cin >> opcion;
-        switch (opcion)
-        {
-        case 1:
-            system("cls");
-            generarRolDePagos();
-            system("pause");
-            break;
-
-        case 2:
-            system("cls");
-            verRolesDePago();
-            system("pause");
-            break;
-        case 3:
-            system("cls");
-            buscarRolDePagos();
-            system("pause");
-        case 4:
-            system("cls");
-            verRolesDePagoEnLista();
-            system("pause");
-            break;
-        case 5:
-            cout << "\n\tSaliendo..." << endl;
-            cout << "\n\tGracias por usar nuestro programa " << endl;
-            break;
-        }
-    } while (opcion != 5);
-}
-
-template <typename T>
-void RolDePagos<T>::generarRolDePagos()
-{
-    Trabajador *trabajador;
-    trabajador = new Trabajador();
-    Ingresos *ingresos;
-    ingresos = new Ingresos();
-
-    Egresos *egresos;
-    egresos = new Egresos();
-    trabajador = generarTrabajador();
-    ingresos = generarIngresos();
-    egresos = generarEgresos(ingresos->getTotalIngresos());
-    imprimirRol(trabajador, ingresos, egresos);
-    guardarArchivoTxt(toString(*trabajador, *ingresos, *egresos));
-}
-
-
-
-
-template <typename T>
 void RolDePagos<T>::buscarRolDePagos()
 {
     Trabajador *trabajador;
@@ -217,7 +153,7 @@ void RolDePagos<T>::buscarRolDePagos()
         cout << "3. Apellido" << endl;
         cout << "4. Regresar" << endl;
         cout << "Ingrese una opcion: ";
-        cin >> opcion2;
+        opcion2 = validacion.charToInt();
         switch (opcion2)
         {
         case 1:

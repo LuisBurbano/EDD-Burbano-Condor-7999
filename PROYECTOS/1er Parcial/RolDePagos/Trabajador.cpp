@@ -177,8 +177,6 @@ std::string Trabajador::ingresarCedula()
         
       cedulaValidada = validarCedula(cedulaIngresadaAux);
 
-      
-
       if (cedulaValidada == "0")
       {
          cout << " Cedula Invalida, Ingrese nuevamente" << endl;
@@ -197,6 +195,10 @@ std::string Trabajador::ingresarNombre()
 {
    std::string nombreIngresado;
    nombreIngresado = validacion.ingresoNombreApellido("> ");
+   if(validacion.verificarUsuario(nombreIngresado)==true){
+      cout<<" El trabajador ya existe, ingrese uno valido"<<endl;
+      nombreIngresado = ingresarNombre();
+   }
    return nombreIngresado;
 }
 
@@ -204,6 +206,10 @@ std::string Trabajador::ingresarApellido()
 {
    std::string apellidoIngresado;
    apellidoIngresado = validacion.ingresoNombreApellido("> ");
+   if(validacion.verificarUsuario(apellidoIngresado)==true){
+      cout<<" El trabajador ya existe, ingrese uno valido"<<endl;
+      apellidoIngresado = ingresarApellido();
+   }
    return apellidoIngresado;
 }
 

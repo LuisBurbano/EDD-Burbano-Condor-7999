@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
     Ingresos *ingresos;
     Egresos *egresos;
 
+    
     int opcion;
     do
     {
@@ -48,7 +49,6 @@ int main(int argc, char *argv[])
         {
         case 1:
             system("cls");
-            //rol.generarRolDePagos();
             trabajador = rol.generarTrabajador();
             ingresos = rol.generarIngresos();
             egresos = rol.generarEgresos(ingresos->getTotalIngresos());
@@ -78,17 +78,7 @@ int main(int argc, char *argv[])
             break;
         }
     } while (opcion != 5);
-    
 
-    //
-   
-
-
-    //trabajador = rol2.generarTrabajador();
-    //ingresos = rol2.generarIngresos();
-    //egresos = rol2.generarEgresos(ingresos->getTotalIngresos());
-    //rol2.imprimirRol(trabajador, ingresos, egresos);
-    //rol2.guardarArchivoTxt(rol2.toString(*trabajador, *ingresos, *egresos));
     free(trabajador);
     free(ingresos);
     free(egresos);
